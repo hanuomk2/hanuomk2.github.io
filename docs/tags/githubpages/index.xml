@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Odaba&#39;s Blog</title>
-    <link>https://hanuomk2.github.io/posts/</link>
-    <description>Recent content in Posts on Odaba&#39;s Blog</description>
+    <title>GithubPages on Odaba&#39;s Blog</title>
+    <link>https://hanuomk2.github.io/tags/githubpages/</link>
+    <description>Recent content in GithubPages on Odaba&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sun, 30 Jan 2022 17:01:35 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 17:01:35 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/githubpages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo on MacOS で技術情報サイトをGithub Pagesで公開する</title>
       <link>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-macos/</link>
@@ -15,15 +15,6 @@
       
       <guid>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-macos/</guid>
       <description>謝辞-参考サイト HUGO GETTING STARTED Hugo で github にブログを立ち上げる Part 1 Hugo で github にブログを立ち上げる Part 2 Hugo + GitHub で静的サイトを作る（mac編） Hugo-Primer HomebrewでH</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://hanuomk2.github.io/posts/my-first-post/</link>
-      <pubDate>Sat, 29 Jan 2022 18:12:23 +0900</pubDate>
-      
-      <guid>https://hanuomk2.github.io/posts/my-first-post/</guid>
-      <description>Github Pagesはじめました</description>
     </item>
     
   </channel>

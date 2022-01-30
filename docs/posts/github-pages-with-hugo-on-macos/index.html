@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Hugo on MacOS で技術情報サイトをGithub Pagesで公開する &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="謝辞-参考サイト HUGO GETTING STARTED Hugo で github にブログを立ち上げる Part 1 Hugo で github にブログを立ち上げる Part 2 Hugo &#43; GitHub で静的サイトを作る（mac編） Hugo-Primer HomebrewでH|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Hugo on MacOS で技術情報サイトをGithub Pagesで公開する</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+<a href='/tags/githubpages' class="muted-link">
+  <span class="Label Label--gray">GithubPages</span>
+</a>
+
+<a href='/tags/hugo' class="muted-link">
+  <span class="Label Label--gray">Hugo</span>
+</a>
+
+<a href='/tags/macos' class="muted-link">
+  <span class="Label Label--gray">MacOS</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2022-01-30. Published at: 2022-01-30.">
+        
+          Published: 2022-01-30
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+<a href="https://gohugo.io/getting-started/quick-start/">HUGO GETTING STARTED</a><br>
+<a href="http://blog.syati.info/post/create_hugo.html">Hugo で github にブログを立ち上げる Part 1</a><br>
+<a href="http://blog.syati.info/post/create_hugo_2.html">Hugo で github にブログを立ち上げる Part 2</a><br>
+<a href="https://dampgblog.hinohikari291.com/hugo-github-mac/">Hugo + GitHub で静的サイトを作る（mac編）</a><br>
+<a href="https://github.com/qqhann/hugo-primer">Hugo-Primer</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+HomebrewでHugoをインストール
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew install hugo</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Github Pages用のテンプレートの作成
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+hugo new site {ユーザ名}.github.io<br>
+私の例だと以下の通り</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new site hanuomk2.github.io</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+テーマのインストール
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> hanuomk2.github.io
+$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recusive
+$ <span class="nb">echo</span> <span class="s1">&#39;theme = &#34;hugo-primer&#34;&#39;</span> &gt;&gt; config.toml</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
+記事をポストする
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/my-first-post.md</code></pre></div>
+</div>
+<p>
+「content/posts/my-first-post.md」には以下のの様なテキストが自動で挿入される</p>
+<div class="src src-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">---
+title: &#34;my-first-post&#34;
+date: 2022-01-18T23:05:31+09:00
+draft: true
+---</code></pre></div>
+</div>
+<p>
+『draft: true』を『draft: false』に変更しておく　</p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+localhostサイト確認
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server</code></pre></div>
+</div>
+<p>
+この後、<a href="http://localhost:1313/"><a href="http://localhost:1313/">http://localhost:1313/</a></a>にブラウザでアクセスする</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+cofig.tomlの設定
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<p>
+以下の通り、themes/hugo-primer/exampleSite/config.tomlをコピーして、適当に編集する(「publishDir = &#34;docs&#34;」を追加)</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ mv config.toml config.org.toml
+$ cp themes/hugo-primer/exampleSite/config.toml .
+$ rm -rf public <span class="c1"># このディレクトリは git subtree を利用して管理するので削除</span>
+$ rm -rf themes/hugo-primer/.git <span class="c1">#これがあると後のgit add -Aでerrorになるので削除</span>
+$ <span class="nb">echo</span> <span class="s2">&#34;# hanuomk2.github.io&#34;</span> &gt;&gt; README.md</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-2">
+<h2 id="headline-8">
+repositoryにpushする
+</h2>
+<div id="outline-text-headline-8" class="outline-text-2">
+<p>
+Github上にrepository「{ユーザ名}.github.io」を作成し、sourceは&#34;/docs&#34;に置く設定とする<br>
+{ユーザ名}.github.ioフォルダで以下のコマンドを実行</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo
+$ git init
+$ git add -A
+$ git rm --cached -r themes/hugo-primer
+$ git commit -m “first commit”
+$ git branch -M main
+$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
+$ git push -u origin main</code></pre></div>
+</div>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Hugo on MacOS で技術情報サイトをGithub Pagesで公開する</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">HomebrewでHugoをインストール</a>
+</li>
+<li><a href="#headline-3">Github Pages用のテンプレートの作成</a>
+</li>
+<li><a href="#headline-4">テーマのインストール</a>
+</li>
+<li><a href="#headline-5">記事をポストする</a>
+</li>
+<li><a href="#headline-6">localhostサイト確認</a>
+</li>
+<li><a href="#headline-7">cofig.tomlの設定</a>
+</li>
+<li><a href="#headline-8">repositoryにpushする</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

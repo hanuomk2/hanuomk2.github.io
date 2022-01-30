@@ -6,6 +6,34 @@
     <description>Recent content in Tags on Odaba&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>&amp;copy;Odaba 2022</copyright><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy;Odaba 2022</copyright>
+    <lastBuildDate>Sun, 30 Jan 2022 17:01:35 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GithubPages</title>
+      <link>https://hanuomk2.github.io/tags/githubpages/</link>
+      <pubDate>Sun, 30 Jan 2022 17:01:35 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/githubpages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://hanuomk2.github.io/tags/hugo/</link>
+      <pubDate>Sun, 30 Jan 2022 17:01:35 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://hanuomk2.github.io/tags/macos/</link>
+      <pubDate>Sun, 30 Jan 2022 17:01:35 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
