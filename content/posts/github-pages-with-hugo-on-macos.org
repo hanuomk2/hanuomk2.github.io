@@ -1,0 +1,93 @@
+#+TITLE: Hugo on MacOS で技術情報サイトをGithub Pagesで公開する
+#+DATE: 2022-01-30T17:01:35+09:00
+#+DRAFT: false
+#+TAGS[]: GithubPages Hugo MacOS
+
+* 謝辞-参考サイト
+
+[[https://gohugo.io/getting-started/quick-start/][HUGO GETTING STARTED]]\\
+[[http://blog.syati.info/post/create_hugo.html][Hugo で github にブログを立ち上げる Part 1]]\\
+[[http://blog.syati.info/post/create_hugo_2.html][Hugo で github にブログを立ち上げる Part 2]]\\
+[[https://dampgblog.hinohikari291.com/hugo-github-mac/][Hugo + GitHub で静的サイトを作る（mac編）]]\\
+[[https://github.com/qqhann/hugo-primer][Hugo-Primer]]
+
+* HomebrewでHugoをインストール
+
+#+BEGIN_SRC sh
+$ brew install hugo
+#+END_SRC
+
+* Github Pages用のテンプレートの作成
+
+hugo new site {ユーザ名}.github.io\\
+私の例だと以下の通り
+
+#+BEGIN_SRC sh
+$ hugo new site hanuomk2.github.io
+#+END_SRC
+
+* テーマのインストール
+
+#+BEGIN_SRC sh
+$ cd hanuomk2.github.io
+$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recusive
+$ echo 'theme = "hugo-primer"' >> config.toml
+#+END_SRC
+
+* 記事をポストする
+
+#+BEGIN_SRC sh
+$ hugo new posts/my-first-post.md
+#+END_SRC
+
+「content/posts/my-first-post.md」には以下のの様なテキストが自動で挿入される
+
+#+BEGIN_SRC
+---
+title: "my-first-post"
+date: 2022-01-18T23:05:31+09:00
+draft: true
+---
+#+END_SRC
+
+『draft: true』を『draft: false』に変更しておく　
+
+* localhostサイト確認
+
+#+BEGIN_SRC sh
+$ hugo server
+#+END_SRC
+
+この後、[[http://localhost:1313/][http://localhost:1313/]]にブラウザでアクセスする
+
+* cofig.tomlの設定
+
+以下の通り、themes/hugo-primer/exampleSite/config.tomlをコピーして、適当に編集する(「publishDir = "docs"」を追加)
+
+#+BEGIN_SRC sh
+$ mv config.toml config.org.toml
+$ cp themes/hugo-primer/exampleSite/config.toml .
+$ rm -rf public # このディレクトリは git subtree を利用して管理するので削除
+$ rm -rf themes/hugo-primer/.git #これがあると後のgit add -Aでerrorになるので削除
+$ echo "# hanuomk2.github.io" >> README.md
+#+END_SRC
+
+* repositoryにpushする
+
+Github上にrepository「{ユーザ名}.github.io」を作成し、sourceは"/docs"に置く設定とする\\
+{ユーザ名}.github.ioフォルダで以下のコマンドを実行
+
+#+BEGIN_SRC sh
+$ hugo
+$ git init
+$ git add -A
+$ git rm --cached -r themes/hugo-primer
+$ git commit -m “first commit”
+$ git branch -M main
+$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
+$ git push -u origin main
+#+END_SRC
+
+以上
+
+
