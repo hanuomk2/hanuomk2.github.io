@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習 &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="謝辞-参考サイト Hugo Org-Mode Default Archetype archetypes/default.org を設定 $ cd archetypes/default.org $ cp default.md default.org この後、前記参考サイトの様な形で、default.orgを設定 例えばこんな感じ #&#43;TITLE: {{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; ||">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89' class="muted-link">
+  <span class="Label Label--gray-darker">環境構築</span>
+</a>
+
+
+
+<a href='/tags/githubpages' class="muted-link">
+  <span class="Label Label--gray">GithubPages</span>
+</a>
+
+<a href='/tags/hugo' class="muted-link">
+  <span class="Label Label--gray">Hugo</span>
+</a>
+
+<a href='/tags/macos' class="muted-link">
+  <span class="Label Label--gray">MacOS</span>
+</a>
+
+<a href='/tags/orgmode' class="muted-link">
+  <span class="Label Label--gray">Orgmode</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2022-02-02. Published at: 2022-02-02.">
+        
+          Published: 2022-02-02
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+<a href="https://blog.lambda.cx/posts/hugo-org-archetype/">Hugo Org-Mode Default Archetype</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+archetypes/default.org を設定
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> archetypes/default.org
+$ cp default.md default.org</code></pre></div>
+</div>
+<p>
+この後、前記参考サイトの様な形で、default.orgを設定<br>
+例えばこんな感じ</p>
+<div class="src src-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">#+TITLE: {{ replace .Name &#34;-&#34; &#34; &#34; | title }}
+#+DATE: {{ .Date }}
+#+DRAFT: false
+#+CATEGORIES[]:
+#+TAGS[]:</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+新しい記事をOrgmodeフォーマットでポストする
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/new-article.org</code></pre></div>
+</div>
+<p>
+contents/posts/new-article.orgを編集する</p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+localhostでblogサーバを確認する
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server</code></pre></div>
+</div>
+<p>
+この後、<a href="http://localhost:1313/"><a href="http://localhost:1313/">http://localhost:1313/</a></a>にブラウザでアクセスする</p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
+repositoryにpushする
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo
+$ git add content/posts/
+$ git add docs/
+$ git commit -m <span class="s2">&#34;a new article&#34;</span>
+$ git push origin main</code></pre></div>
+</div>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">archetypes/default.org を設定</a>
+</li>
+<li><a href="#headline-3">新しい記事をOrgmodeフォーマットでポストする</a>
+</li>
+<li><a href="#headline-4">localhostでblogサーバを確認する</a>
+</li>
+<li><a href="#headline-5">repositoryにpushする</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

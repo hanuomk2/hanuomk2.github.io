@@ -1,0 +1,55 @@
+#+TITLE: Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習
+#+DATE: 2022-02-02T23:22:40+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: GithubPages Hugo MacOS Orgmode
+
+* 謝辞-参考サイト
+
+[[https://blog.lambda.cx/posts/hugo-org-archetype/][Hugo Org-Mode Default Archetype]]
+
+* archetypes/default.org を設定
+
+#+BEGIN_SRC sh
+$ cd archetypes/default.org
+$ cp default.md default.org
+#+END_SRC
+
+この後、前記参考サイトの様な形で、default.orgを設定\\
+例えばこんな感じ
+
+#+BEGIN_SRC
+#+TITLE: {{ replace .Name "-" " " | title }}
+#+DATE: {{ .Date }}
+#+DRAFT: false
+#+CATEGORIES[]:
+#+TAGS[]:
+#+END_SRC
+
+* 新しい記事をOrgmodeフォーマットでポストする
+
+#+BEGIN_SRC sh
+$ hugo new posts/new-article.org
+#+END_SRC
+
+contents/posts/new-article.orgを編集する
+
+* localhostでblogサーバを確認する
+
+#+BEGIN_SRC sh
+$ hugo server
+#+END_SRC
+
+この後、[[http://localhost:1313/][http://localhost:1313/]]にブラウザでアクセスする
+
+* repositoryにpushする
+
+#+BEGIN_SRC sh
+$ hugo
+$ git add content/posts/
+$ git add docs/
+$ git commit -m "a new article"
+$ git push origin main
+#+END_SRC
+
+以上

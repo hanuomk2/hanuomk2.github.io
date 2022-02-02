@@ -1,6 +1,7 @@
 #+TITLE: Hugo on MacOS で技術情報サイトをGithub Pagesで公開する
 #+DATE: 2022-01-30T17:01:35+09:00
 #+DRAFT: false
+#+CATEGORIES[]: 環境構築
 #+TAGS[]: GithubPages Hugo MacOS
 
 * 謝辞-参考サイト
