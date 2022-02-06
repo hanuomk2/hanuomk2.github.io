@@ -156,8 +156,8 @@ repositoryにpushする
 <div id="outline-text-headline-5" class="outline-text-2">
 <div class="src src-sh">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo
-$ git add content/posts/
-$ git add docs/
+$ git add -A
+$ git rm --cached -r themes/hugo-primer
 $ git commit -m <span class="s2">&#34;a new article&#34;</span>
 $ git push origin main</code></pre></div>
 </div>
