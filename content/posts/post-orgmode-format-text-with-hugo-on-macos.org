@@ -46,10 +46,10 @@ $ hugo server
 
 #+BEGIN_SRC sh
 $ hugo
-$ git add content/posts/
-$ git add docs/
+$ git add -A
+$ git rm --cached -r themes/hugo-primer
 $ git commit -m "a new article"
-$ git push origin main
+$ git push -u origin main
 #+END_SRC
 
 以上
