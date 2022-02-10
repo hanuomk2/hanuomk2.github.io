@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>easy-hugo on Odaba&#39;s Blog</title>
+    <link>https://hanuomk2.github.io/tags/easy-hugo/</link>
+    <description>Recent content in easy-hugo on Odaba&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy;Odaba 2022</copyright>
+    <lastBuildDate>Sun, 06 Feb 2022 21:40:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/easy-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>easy-hugoでポストする練習</title>
+      <link>https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/</link>
+      <pubDate>Sun, 06 Feb 2022 21:40:28 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/</guid>
+      <description>謝辞-参考サイト emacs-easy-hugo Hugoとemacsの融合(easy-hugo) EmacsでPATHの設定が引き継がれない問題をエレガントに解決する Mac</description>
+    </item>
+    
+  </channel>
+</rss>

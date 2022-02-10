@@ -1,0 +1,80 @@
+#+TITLE: easy-hugoでポストする練習
+#+DATE: 2022-02-06T21:40:28+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: GithubPages Hugo Emacs easy-hugo
+
+* 謝辞-参考サイト
+
+[[https://github.com/masasam/emacs-easy-hugo][emacs-easy-hugo]]\\
+[[https://tounosumura302.netlify.app/posts/easy-hugo/][Hugoとemacsの融合(easy-hugo)]]\\
+[[https://qiita.com/catatsuy/items/3dda714f4c60c435bb25][EmacsでPATHの設定が引き継がれない問題をエレガントに解決する]]\\
+[[https://parashuto.com/rriver/tools/github-push-asks-passphrase-every-time][MacターミナルでGithubにプッシュする際に毎回パスフレーズを聞かれる時の対処法]]
+
+* easy-hugo インストール
+
+emacs上で以下のコマンドを実行([[https://melpa.org/][MELPA]]をあらかじめ設定しておく)
+
+#+BEGIN_SRC
+M-x package-install
+#+END_SRC
+
+* .emacs.d/init.elの設定
+
+#+BEGIN_SRC lisp
+(setq easy-hugo-basedir "~/hanuomk2.github.io/")
+(setq easy-hugo-url "https://hanuomk2.github.io")
+(setq easy-hugo-sshdomain "github.com")
+(setq easy-hugo-root "/")
+(setq easy-hugo-previewtime "300")
+(setq easy-hugo-postdir "content/posts")
+(setq easy-hugo-default-ext ".org")
+(define-key global-map (kbd "C-c C-e") 'easy-hugo)
+#+END_SRC
+
+* deploy.shの作成
+
+#+BEGIN_SRC sh
+echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+hugo 
+
+git add -A
+git rm --cached -r themes/hugo-primer
+
+msg="rebuilding site `LANG=C date`"
+if [ $# -eq 1 ]
+  then msg="$1"
+fi
+git commit -m "$msg"
+
+git push -u origin main
+#+END_SRC
+
+上記参照サイトに従って、パスフレーズを入力しなくてもpushできるようにしておく\\
+また下記のコマンドで実行できるようにしておく
+
+#+BEGIN_SRC sh
+$ chmod +x deploy.sh
+#+END_SRC
+
+* easy-hugo起動
+
+emacs上で以下のコマンドを実行\\
+(上記参照サイトに従って、PATH"/usr/local/bin/hugo"をemacs上で認識させておく)
+
+#+BEGIN_SRC
+M-x easy-hugo
+#+END_SRC
+
+* easy-hugo操作
+
+|-----+----------------|
+| key | function       |
+|-----+----------------|
+| n   | New blog post  |
+| p   | preview        |
+| G   | Deploy GitHub  |
+| q   | Quit easy-hugo |
+|-----+----------------|
+
+以上
