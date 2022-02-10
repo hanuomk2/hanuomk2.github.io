@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Termux on Android で Emacs &ndash; Odaba&#39;s Blog
+  Termux on Android で Github &ndash; Odaba&#39;s Blog
 
     </title>
     
     
-    <meta name="description" property="og:description" content="謝辞-参考サイト How to install DDSKK using MELPA Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる melpa 設定 ~/.emacs.d/ini|">
+    <meta name="description" property="og:description" content="MacOSと同じ様にAndroidからもGithubにアクセスしたいので、その方法 謝辞-参考サイト Android端末でgitやれるようになる|">
     
 
     <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
@@ -50,7 +50,7 @@
 
 <div class="Subhead">
   <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">Termux on Android で Emacs</div>
+    <div class="h1 mt-3 mb-1">Termux on Android で Github</div>
   </div>
   <div class="Subhead-description">
     
@@ -62,8 +62,8 @@
 
 
 
-<a href='/tags/emacs' class="muted-link">
-  <span class="Label Label--gray">Emacs</span>
+<a href='/tags/github' class="muted-link">
+  <span class="Label Label--gray">Github</span>
 </a>
 
 <a href='/tags/termux' class="muted-link">
@@ -91,78 +91,85 @@
   
   <section class="pb-6 mb-3 border-bottom">
     
+<p>
+MacOSと同じ様にAndroidからもGithubにアクセスしたいので、その方法</p>
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
 謝辞-参考サイト
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
-<p><a href="https://github.com/skk-dev/ddskk/blob/master/READMEs/INSTALL.MELPA.md">How to install DDSKK using MELPA</a></p>
+<p>
+ <a href="https://debslink.hatenadiary.jp/entry/20180922/1537573651">Android端末でgitやれるようになるまで</a></p>
 </div>
 </div>
 <div id="outline-container-headline-2" class="outline-2">
 <h2 id="headline-2">
-Emacsインストール
+Termuxにgitとsshのインストール
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ apt-get install emacs</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ pkg add git openssh
+$ git config --global user.name <span class="s2">&#34;odaba&#34;</span>
+$ git config --global user.email <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
 </div>
 <p>
-一度Emacsを起動させて、C-x C-cで閉じる</p>
+※emailアドレスはMacOSから設定したものに合わせる</p>
 </div>
 </div>
 <div id="outline-container-headline-3" class="outline-2">
 <h2 id="headline-3">
-melpa 設定
+SSH Keyの作成
 </h2>
 <div id="outline-text-headline-3" class="outline-text-2">
-<p>
-~/.emacs.d/init.elに以下を追加</p>
-<div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span></code></pre></div>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh-keygen -t rsa -C <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
 </div>
+<p>
+※この後、パスフレーズを入力</p>
 </div>
 </div>
 <div id="outline-container-headline-4" class="outline-2">
 <h2 id="headline-4">
-ddskk インストール
+SSH Keyのテキストコピー
 </h2>
 <div id="outline-text-headline-4" class="outline-text-2">
 <p>
-ソフトキーボード等ではこっちを使う</p>
-<div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x package-install
-ddskk</code></pre></div>
+以下のコマンドを実行後、表示されたテキストを指で選択範囲を指定し、copy選択</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ cat .ssh/id_rsa.pub</code></pre></div>
 </div>
-<p>
-ddskkの設定は、上記参考サイトを確認のこと</p>
 </div>
 </div>
 <div id="outline-container-headline-5" class="outline-2">
 <h2 id="headline-5">
-t-code インストール
+Githubでの設定
 </h2>
 <div id="outline-text-headline-5" class="outline-text-2">
 <p>
-絶滅危惧種の<a href="https://github.com/kanchoku/tc">Tコード</a>使いなので、普段はこっちを使ったりする</p>
-<div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x package-install
-tc
-
-M-x tcode-install</code></pre></div>
+ブラウザChromeでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し
+[New SSH key]クリック</p>
+<p>
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後
+[Add SSH key]クリック</p>
+<p>
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く</p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+TermuxでGithubに接続するテスト
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh -T git@github.com</code></pre></div>
 </div>
 <p>
-~/.emacs.d/init.elに以下を追加<br>
-(C-¥に割り当てできなかったので、C-\とC-x ¥に割り当て)</p>
-<div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(require &#39;tc-setup)
-(set-input-method &#34;japanese-T-Code&#34;)
-;; (define-key global-map [?\C-¥] &#39;toggle-input-method)
-(global-set-key (kbd &#34;C-\\&#34;) &#39;toggle-input-method)
-(global-set-key (kbd &#34;C-x \¥&#34;) &#39;toggle-input-method)</code></pre></div>
-</div>
+yes/noと聞かれるので、yesを入力します</p>
+<p>
+この後、以下のように表示されると成功です</p>
+<p>
+Hi hanuomk2! You&#39;ve successfully authenticated,
+but GitHub does not provide shell access.</p>
 <p>
 以上</p>
 </div>
@@ -184,17 +191,19 @@ M-x tcode-install</code></pre></div>
           
   
     <div id="toc" class="Box Box--blue mb-3">
-      <b>Termux on Android で Emacs</b><nav id="TableOfContents">
+      <b>Termux on Android で Github</b><nav id="TableOfContents">
 <ul>
 <li><a href="#headline-1">謝辞-参考サイト</a>
 </li>
-<li><a href="#headline-2">Emacsインストール</a>
+<li><a href="#headline-2">Termuxにgitとsshのインストール</a>
 </li>
-<li><a href="#headline-3">melpa 設定</a>
+<li><a href="#headline-3">SSH Keyの作成</a>
 </li>
-<li><a href="#headline-4">ddskk インストール</a>
+<li><a href="#headline-4">SSH Keyのテキストコピー</a>
 </li>
-<li><a href="#headline-5">t-code インストール</a>
+<li><a href="#headline-5">Githubでの設定</a>
+</li>
+<li><a href="#headline-6">TermuxでGithubに接続するテスト</a>
 </li>
 </ul>
 </nav></div>

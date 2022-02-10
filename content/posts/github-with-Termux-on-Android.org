@@ -1,0 +1,62 @@
+#+TITLE: Termux on Android で Github
+#+DATE: 2022-02-10T21:35:19+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Github Termux Android
+
+MacOSと同じ様にAndroidからもGithubにアクセスしたいので、その方法
+
+* 謝辞-参考サイト
+
+ [[https://debslink.hatenadiary.jp/entry/20180922/1537573651][Android端末でgitやれるようになるまで]]
+
+* Termuxにgitとsshのインストール
+
+#+BEGIN_SRC sh
+$ pkg add git openssh
+$ git config --global user.name "odaba"
+$ git config --global user.email "***@****.**.jp"
+#+END_SRC
+
+※emailアドレスはMacOSから設定したものに合わせる
+
+* SSH Keyの作成
+
+#+BEGIN_SRC sh
+$ ssh-keygen -t rsa -C "***@****.**.jp"
+#+END_SRC
+
+※この後、パスフレーズを入力
+
+* SSH Keyのテキストコピー
+
+以下のコマンドを実行後、表示されたテキストを指で選択範囲を指定し、copy選択
+
+#+BEGIN_SRC sh
+$ cat .ssh/id_rsa.pub
+#+END_SRC
+
+* Githubでの設定
+
+ブラウザChromeでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し
+[New SSH key]クリック
+
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後
+[Add SSH key]クリック
+
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く
+
+* TermuxでGithubに接続するテスト
+
+#+BEGIN_SRC sh
+$ ssh -T git@github.com
+#+END_SRC
+
+yes/noと聞かれるので、yesを入力します
+
+この後、以下のように表示されると成功です
+
+Hi hanuomk2! You've successfully authenticated,
+but GitHub does not provide shell access.
+
+以上

@@ -14,7 +14,7 @@
       <pubDate>Thu, 10 Feb 2022 16:57:08 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/posts/emacs-on-termux/</guid>
-      <description>謝辞-参照サイト How to install DDSKK using MELPA Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる melpa 設定 ~/.emacs.d/ini</description>
+      <description>謝辞-参考サイト How to install DDSKK using MELPA Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる melpa 設定 ~/.emacs.d/ini</description>
     </item>
     
     <item>

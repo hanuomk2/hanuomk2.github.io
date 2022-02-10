@@ -4,7 +4,7 @@
 #+CATEGORIES[]: 環境構築
 #+TAGS[]: Emacs Termux Android
 
-* 謝辞-参照サイト
+* 謝辞-参考サイト
 [[https://github.com/skk-dev/ddskk/blob/master/READMEs/INSTALL.MELPA.md][How to install DDSKK using MELPA]]
 
 * Emacsインストール
@@ -34,7 +34,7 @@ M-x package-install
 ddskk
 #+END_SRC
 
-ddskkの設定は上記参照サイトを確認のこと
+ddskkの設定は、上記参考サイトを確認のこと
 
 * t-code インストール
 

@@ -35,6 +35,7 @@ M-x package-install
 * deploy.shの作成
 
 #+BEGIN_SRC sh
+#!/bin/sh
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 hugo 
 
