@@ -1,0 +1,61 @@
+#+TITLE: Termux on Android で Emacs
+#+DATE: 2022-02-10T16:57:08+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Emacs Termux Android
+
+* 謝辞-参照サイト
+[[https://github.com/skk-dev/ddskk/blob/master/READMEs/INSTALL.MELPA.md][How to install DDSKK using MELPA]]
+
+* Emacsインストール
+
+#+BEGIN_SRC sh
+$ apt-get install emacs
+#+END_SRC
+
+一度Emacsを起動させて、C-x C-cで閉じる
+
+* melpa 設定
+
+~/.emacs.d/init.elに以下を追加
+
+#+BEGIN_SRC lisp
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+#+END_SRC
+
+* ddskk インストール
+
+ソフトキーボード等ではこっちを使う
+
+#+BEGIN_SRC
+M-x package-install
+ddskk
+#+END_SRC
+
+ddskkの設定は上記参照サイトを確認のこと
+
+* t-code インストール
+
+絶滅危惧種の[[https://github.com/kanchoku/tc][Tコード]]使いなので、普段はこっちを使ったりする
+
+#+BEGIN_SRC
+M-x package-install
+tc
+
+M-x tcode-install
+#+END_SRC
+
+~/.emacs.d/init.elに以下を追加\\
+(C-¥に割り当てできなかったので、C-\とC-x ¥に割り当て)
+
+#+BEGIN_SRC
+(require 'tc-setup)
+(set-input-method "japanese-T-Code")
+;; (define-key global-map [?\C-¥] 'toggle-input-method)
+(global-set-key (kbd "C-\\") 'toggle-input-method)
+(global-set-key (kbd "C-x \¥") 'toggle-input-method)
+#+END_SRC
+
+以上

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Odaba&#39;s Blog</title>
+    <link>https://hanuomk2.github.io/tags/android/</link>
+    <description>Recent content in Android on Odaba&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy;Odaba 2022</copyright>
+    <lastBuildDate>Thu, 10 Feb 2022 16:57:08 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Termux on Android で Emacs</title>
+      <link>https://hanuomk2.github.io/posts/emacs-on-termux/</link>
+      <pubDate>Thu, 10 Feb 2022 16:57:08 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/emacs-on-termux/</guid>
+      <description>謝辞-参照サイト How to install DDSKK using MELPA Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる melpa 設定 ~/.emacs.d/ini</description>
+    </item>
+    
+    <item>
+      <title>AndroidでTermux</title>
+      <link>https://hanuomk2.github.io/posts/termux-on-android/</link>
+      <pubDate>Thu, 10 Feb 2022 16:40:24 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/termux-on-android/</guid>
+      <description>ちょっと前にガラケーからAndroidに乗り換えた どうせならEmacsを使いたいので、AndroidにTermuxを入れる事にした Termu</description>
+    </item>
+    
+  </channel>
+</rss>

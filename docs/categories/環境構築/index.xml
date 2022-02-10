@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sun, 06 Feb 2022 21:40:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Feb 2022 16:57:08 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Termux on Android で Emacs</title>
+      <link>https://hanuomk2.github.io/posts/emacs-on-termux/</link>
+      <pubDate>Thu, 10 Feb 2022 16:57:08 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/emacs-on-termux/</guid>
+      <description>謝辞-参照サイト How to install DDSKK using MELPA Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる melpa 設定 ~/.emacs.d/ini</description>
+    </item>
+    
+    <item>
+      <title>AndroidでTermux</title>
+      <link>https://hanuomk2.github.io/posts/termux-on-android/</link>
+      <pubDate>Thu, 10 Feb 2022 16:40:24 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/termux-on-android/</guid>
+      <description>ちょっと前にガラケーからAndroidに乗り換えた どうせならEmacsを使いたいので、AndroidにTermuxを入れる事にした Termu</description>
+    </item>
+    
     <item>
       <title>easy-hugoでポストする練習</title>
       <link>https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/</link>

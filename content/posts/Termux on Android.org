@@ -1,0 +1,55 @@
+#+TITLE: AndroidでTermux
+#+DATE: 2022-02-10T16:40:24+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Termux Android
+
+ちょっと前にガラケーからAndroidに乗り換えた\\
+どうせならEmacsを使いたいので、AndroidにTermuxを入れる事にした
+
+TermuxはGoogle Playでもダウンロードできるが最新ではないみたいで、
+Google PlayでダウンロードできるものはC-SPCが使えないみたいなので、
+[[https://f-droid.org/ja/][F-Droid]]で配布されている[[https://f-droid.org/packages/com.termux/][もの]]を使うのが良いと思う
+
+* F-Droidのインストール
+
+[[https://f-droid.org/][F-Droid公式サイト]]をChromeでアクセスし、F-Droidアプリをダウンロードする。
+ダウンロードしてアプリを開くと、「不明なアプリのインストール」メッセージが
+表示されるので、「この提供元のアプリを許可」をONにする
+
+後、セキリティー対策のため、
+[設定]-[アプリ]-[特別なアプリアクセス]-[不明なアプリのインストール]
+でChromeを「許可しない」に戻す
+
+* Termuxのインストール
+
+F-Droidアプリを起動し、「Termux」を検索してインストールする
+また、アプリを開くと、「不明なアプリのインストール」メッセージが
+表示されるので、「この提供元のアプリを許可」をONにする
+
+ここでも、セキリティー対策のため、
+[設定]-[アプリ]-[特別なアプリアクセス]-[不明なアプリのインストール]
+でF-Droidを「許可しない」に戻す
+
+* Termuxの設定
+
+以下のコマンドを入力して、storageへのアクセスを許可する
+
+#+BEGIN_SRC sh
+$ apt-get update; apt-get upgrade; termux-setup-storage
+#+END_SRC
+
+「~/.termux/termux.properties」に(Emacs等のエディタをインストールしてから)
+以下を設定し、C-SPCを有効にする
+
+#+BEGIN_SRC
+ctrl-space-workaround = true
+#+END_SRC
+
+以下のコマンドで設定を反映する
+
+#+BEGIN_SRC sh
+$ termux-reload-settings
+#+END_SRC
+
+以上
