@@ -134,7 +134,8 @@ SSH Keyのテキストコピー
 </h2>
 <div id="outline-text-headline-4" class="outline-text-2">
 <p>
-以下のコマンドを実行後、表示されたテキストを指で選択範囲を指定し、copy選択</p>
+以下のコマンドを実行後、表示されたテキストに対して、指で選択範囲を指定し、
+copy選択</p>
 <div class="src src-sh">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ cat .ssh/id_rsa.pub</code></pre></div>
 </div>
@@ -164,9 +165,10 @@ TermuxでGithubに接続するテスト
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh -T git@github.com</code></pre></div>
 </div>
 <p>
-yes/noと聞かれるので、yesを入力します</p>
+yes/noと聞かれるので、yesを入力する<br>
+パスフレーズを聞かれたら、入力する</p>
 <p>
-この後、以下のように表示されると成功です</p>
+この後、以下のように表示されると成功</p>
 <p>
 Hi hanuomk2! You&#39;ve successfully authenticated,
 but GitHub does not provide shell access.</p>

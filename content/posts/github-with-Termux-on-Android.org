@@ -30,7 +30,8 @@ $ ssh-keygen -t rsa -C "***@****.**.jp"
 
 * SSH Keyのテキストコピー
 
-以下のコマンドを実行後、表示されたテキストを指で選択範囲を指定し、copy選択
+以下のコマンドを実行後、表示されたテキストに対して、指で選択範囲を指定し、
+copy選択
 
 #+BEGIN_SRC sh
 $ cat .ssh/id_rsa.pub
@@ -52,9 +53,10 @@ $ cat .ssh/id_rsa.pub
 $ ssh -T git@github.com
 #+END_SRC
 
-yes/noと聞かれるので、yesを入力します
+yes/noと聞かれるので、yesを入力する\\
+パスフレーズを聞かれたら、入力する
 
-この後、以下のように表示されると成功です
+この後、以下のように表示されると成功
 
 Hi hanuomk2! You've successfully authenticated,
 but GitHub does not provide shell access.
