@@ -38,30 +38,10 @@ $ mv config.toml config.old.toml #これがあるとpullでerrorになる
 $ git pull origin main
 #+END_SRC
 
-* easy-hugoの設定
+後は、[[https://hanuomk2.github.io/posts/post-orgmode-format-text-with-hugo-on-macos/][Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習]]
+に従ってポストする
 
-[[https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/][easy-hugoでポストする練習]]で行った様に設定を行う
-
-** easy-hugo インストール
-
-#+BEGIN_SRC
-M-x package-install
-#+END_SRC
-
-** .emacs.d/init.elの設定
-
-#+BEGIN_SRC elisp
-(setq easy-hugo-basedir "~/hanuomk2.github.io/")
-(setq easy-hugo-url "https://hanuomk2.github.io")
-(setq easy-hugo-sshdomain "github.com")
-(setq easy-hugo-root "/")
-(setq easy-hugo-previewtime "300")
-(setq easy-hugo-postdir "content/posts")
-(setq easy-hugo-default-ext ".org")
-(define-key global-map (kbd "C-c C-e") 'easy-hugo)
-#+END_SRC
-
-後は、上記Pageの通りemacs上でeasy-hugoを操作してみる
+※easy-hugoを使ってみたけど、previewできなかった
 
 ※MacOS, AndroidどちらかのOSでポストした後、もう一方のOSでポストする時は、
 忘れずにgit pullすること
