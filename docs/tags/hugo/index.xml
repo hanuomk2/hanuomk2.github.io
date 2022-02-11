@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sun, 06 Feb 2022 21:40:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 15:44:01 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo on Android でもGithub Pagesにポストする練習</title>
+      <link>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-android/</link>
+      <pubDate>Fri, 11 Feb 2022 15:44:01 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-android/</guid>
+      <description>いちおう、Termux on Android で Githubの続き MacOSで構築したGithub Pagesへのポスト環境を Androidからもポストできる様に</description>
+    </item>
+    
     <item>
       <title>easy-hugoでポストする練習</title>
       <link>https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/</link>

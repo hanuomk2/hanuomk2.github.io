@@ -1,0 +1,69 @@
+#+TITLE: Hugo on Android でもGithub Pagesにポストする練習
+#+DATE: 2022-02-11T15:44:01+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: GithubPages Hugo Android Termux easy-hugo
+
+いちおう、[[https://hanuomk2.github.io/posts/github-with-termux-on-android/][Termux on Android で Github]]の続き\\
+MacOSで構築したGithub Pagesへのポスト環境を
+Androidからもポストできる様にする
+
+* 謝辞-参考サイト
+
+[[https://qiita.com/ytbit/items/368a08d491c01090a07c][TermuxでHugo入門の段]]
+
+* Termuxの設定
+
+[[https://hanuomk2.github.io/posts/github-pages-with-hugo-on-macos/][Hugo on MacOS で技術情報サイトをGithub Pagesで公開する]]
+で行った様に、Guthub Pages用のテンプレートを作成し、
+テーマをインストール
+
+ 
+#+BEGIN_SRC sh
+$ pkg add hugo
+$ hugo new site hanuomk2.github.io
+$ cd hanuomk2.github.io
+$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive
+$ rm -rf themes/hugo-primer/.git #これがあるとgit add -Aでerrorになるので削除
+#+END_SRC
+
+* Githubの該当repositoryからsourceをpull
+
+#+BEGIN_SRC sh
+$ git init
+$ git branch -M main
+$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
+$ mv archetypes/default.md archetypes/default.org.md #これがあるとpullでerrorになる
+$ mv config.toml config.old.toml #これがあるとpullでerrorになる
+$ git pull origin main
+#+END_SRC
+
+* easy-hugoの設定
+
+[[https://hanuomk2.github.io/posts/post-at-easy-hugo-on-emacs/][easy-hugoでポストする練習]]で行った様に設定を行う
+
+** easy-hugo インストール
+
+#+BEGIN_SRC
+M-x package-install
+#+END_SRC
+
+** .emacs.d/init.elの設定
+
+#+BEGIN_SRC elisp
+(setq easy-hugo-basedir "~/hanuomk2.github.io/")
+(setq easy-hugo-url "https://hanuomk2.github.io")
+(setq easy-hugo-sshdomain "github.com")
+(setq easy-hugo-root "/")
+(setq easy-hugo-previewtime "300")
+(setq easy-hugo-postdir "content/posts")
+(setq easy-hugo-default-ext ".org")
+(define-key global-map (kbd "C-c C-e") 'easy-hugo)
+#+END_SRC
+
+後は、上記Pageの通りemacs上でeasy-hugoを操作してみる
+
+※MacOS, AndroidどちらかのOSでポストした後、もう一方のOSでポストする時は、
+忘れずにgit pullすること
+
+以上
