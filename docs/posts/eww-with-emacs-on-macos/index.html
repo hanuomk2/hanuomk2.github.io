@@ -92,7 +92,7 @@
   <section class="pb-6 mb-3 border-bottom">
     
 <p>
-ewwはEmacs上で動作するwebブラウザで標準インストール済
+ewwはEmacs上で動作するwebブラウザで標準インストール済<br>
 以下のコマンドで起動する</p>
 <div class="src src-lisp">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">eww</span></code></pre></div>
@@ -112,7 +112,7 @@ eww設定
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <p>
-~/emacs.d/init.elに以下を設定する</p>
+~/emacs.d/init.elに好みで以下を設定する</p>
 <div class="src src-lisp">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; デフォルトブラウザをEWWにする</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
@@ -125,13 +125,13 @@ eww設定
 </div>
 <p>
 ※httpsアクセスに失敗する場合、gnutlsをインストールする</p>
-<p>
-#+BEING_SRC sh
-$ brew install gnutls</p>
-<p>#+END_SRC</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew install gnutls</code></pre></div>
+</div>
 <p>
 ※gnutlsインストール後に、以下の関数をC-jで評価したけど、
-tは返ってこず、以下の通り、変わらなかった</p>
+tは返ってこず、以下の通り、何故か変わらなかった?
+けどhttpsはアクセス可能</p>
 <div class="src src-lisp">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">gnutls-available-p</span><span class="p">)</span></code></pre></div>
 </div>

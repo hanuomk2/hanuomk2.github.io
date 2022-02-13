@@ -4,7 +4,7 @@
 #+CATEGORIES[]: 環境構築
 #+TAGS[]: eww Emacs MacOS
 
-ewwはEmacs上で動作するwebブラウザで標準インストール済
+ewwはEmacs上で動作するwebブラウザで標準インストール済\\
 以下のコマンドで起動する
 
 #+BEGIN_SRC lisp
@@ -17,7 +17,7 @@ M-x eww
 
 * eww設定
 
-~/emacs.d/init.elに以下を設定する
+~/emacs.d/init.elに好みで以下を設定する
 
 #+BEGIN_SRC lisp
 ;; デフォルトブラウザをEWWにする
@@ -32,12 +32,13 @@ M-x eww
 
 ※httpsアクセスに失敗する場合、gnutlsをインストールする
 
-#+BEING_SRC sh
+#+BEGIN_SRC sh
 $ brew install gnutls
 #+END_SRC
 
 ※gnutlsインストール後に、以下の関数をC-jで評価したけど、
-tは返ってこず、以下の通り、変わらなかった
+tは返ってこず、以下の通り、何故か変わらなかった?
+けどhttpsはアクセス可能
 
 #+BEGIN_SRC lisp
 (gnutls-available-p)
