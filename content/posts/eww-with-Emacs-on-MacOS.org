@@ -1,0 +1,49 @@
+#+TITLE: Emacs on MacOS でeww
+#+DATE: 2022-02-13T21:11:36+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: eww Emacs MacOS
+
+ewwはEmacs上で動作するwebブラウザで標準インストール済
+以下のコマンドで起動する
+
+#+BEGIN_SRC lisp
+M-x eww
+#+END_SRC
+
+* 謝辞-参考サイト
+  [[https://hardsoft.at.webry.info/202002/article_1.html][emacs 26.2 で https アクセスに失敗する]]\\
+  [[https://mahori.jp/2020/11/06/emacs-tls-error/][EmacsでTLSエラーを回避]]
+
+* eww設定
+
+~/emacs.d/init.elに以下を設定する
+
+#+BEGIN_SRC lisp
+;; デフォルトブラウザをEWWにする
+(setq browse-url-browser-function #'eww-browse-url)
+
+;; Web検索をgoogleに設定
+(setq eww-search-prefix "http://www.google.co.jp/search?q=")
+
+;; httpsアクセスに失敗する
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+#+END_SRC
+
+※httpsアクセスに失敗する場合、gnutlsをインストールする
+
+#+BEING_SRC sh
+$ brew install gnutls
+#+END_SRC
+
+※gnutlsインストール後に、以下の関数をC-jで評価したけど、
+tは返ってこず、以下の通り、変わらなかった
+
+#+BEGIN_SRC lisp
+(gnutls-available-p)
+#+END_SRC
+(ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\ Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\ Key Session\ Ticket Record\ Size\ Limit Extended\ Master\ Secret Encrypt-then-MAC ...)
+
+以上
+
+

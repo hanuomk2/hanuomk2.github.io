@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Wed, 02 Feb 2022 23:22:40 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 21:11:36 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs on MacOS でeww</title>
+      <link>https://hanuomk2.github.io/posts/eww-with-emacs-on-macos/</link>
+      <pubDate>Sun, 13 Feb 2022 21:11:36 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/eww-with-emacs-on-macos/</guid>
+      <description>ewwはEmacs上で動作するwebブラウザで標準インストール済 以下のコマンドで起動する M-x eww 謝辞-参考サイト emacs 26.2 で https アクセスに失敗する Ema</description>
+    </item>
+    
     <item>
       <title>Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習</title>
       <link>https://hanuomk2.github.io/posts/post-orgmode-format-text-with-hugo-on-macos/</link>

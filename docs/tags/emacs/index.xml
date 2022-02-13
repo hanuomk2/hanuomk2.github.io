@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Thu, 10 Feb 2022 16:57:08 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 21:11:36 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs on MacOS でeww</title>
+      <link>https://hanuomk2.github.io/posts/eww-with-emacs-on-macos/</link>
+      <pubDate>Sun, 13 Feb 2022 21:11:36 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/eww-with-emacs-on-macos/</guid>
+      <description>ewwはEmacs上で動作するwebブラウザで標準インストール済 以下のコマンドで起動する M-x eww 謝辞-参考サイト emacs 26.2 で https アクセスに失敗する Ema</description>
+    </item>
+    
     <item>
       <title>Termux on Android で Emacs</title>
       <link>https://hanuomk2.github.io/posts/emacs-on-termux/</link>
