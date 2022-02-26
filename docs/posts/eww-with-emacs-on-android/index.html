@@ -19,12 +19,12 @@ if (!doNotTrack) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Emacs on MacOS で eww &ndash; Odaba&#39;s Blog
+  Emacs on Android で eww &ndash; Odaba&#39;s Blog
 
     </title>
     
     
-    <meta name="description" property="og:description" content="ewwはEmacs上で動作するwebブラウザで標準インストール済 以下のコマンドで起動する M-x eww 謝辞-参考サイト emacs 26.2 で https アクセスに失敗する Ema|">
+    <meta name="description" property="og:description" content="Android(Termux)でもEmacsでewwの設定をしてみた 謝辞-参考サイト TermuxでEmacsを使うためにやったこと Emacs での テキ|">
     
 
     <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
@@ -61,7 +61,7 @@ if (!doNotTrack) {
 
 <div class="Subhead">
   <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">Emacs on MacOS で eww</div>
+    <div class="h1 mt-3 mb-1">Emacs on Android で eww</div>
   </div>
   <div class="Subhead-description">
     
@@ -81,17 +81,21 @@ if (!doNotTrack) {
   <span class="Label Label--gray">Emacs</span>
 </a>
 
-<a href='/tags/macos' class="muted-link">
-  <span class="Label Label--gray">MacOS</span>
+<a href='/tags/termux' class="muted-link">
+  <span class="Label Label--gray">Termux</span>
+</a>
+
+<a href='/tags/android' class="muted-link">
+  <span class="Label Label--gray">Android</span>
 </a>
 
 
 
     
     <div class="float-md-right">
-      <span title="Lastmod: 2022-02-13. Published at: 2022-02-13.">
+      <span title="Lastmod: 2022-02-26. Published at: 2022-02-26.">
         
-          Published: 2022-02-13
+          Published: 2022-02-26
         
       </span>
     </div>
@@ -103,18 +107,14 @@ if (!doNotTrack) {
   <section class="pb-6 mb-3 border-bottom">
     
 <p>
-ewwはEmacs上で動作するwebブラウザで標準インストール済<br>
-以下のコマンドで起動する</p>
-<div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">eww</span></code></pre></div>
-</div>
+Android(Termux)でもEmacsでewwの設定をしてみた</p>
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
 謝辞-参考サイト
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
-<p><a href="https://hardsoft.at.webry.info/202002/article_1.html">emacs 26.2 で https アクセスに失敗する</a><br>
-  <a href="https://mahori.jp/2020/11/06/emacs-tls-error/">EmacsでTLSエラーを回避</a></p>
+<p><a href="https://misohena.jp/blog/2022-01-22-termux-intro-for-emacs.html">TermuxでEmacsを使うためにやったこと</a><br>
+  <a href="https://futurismo.biz/archives/2950/">Emacs での テキストブラウザ eww を使えるレベルにする</a></p>
 </div>
 </div>
 <div id="outline-container-headline-2" class="outline-2">
@@ -123,7 +123,9 @@ eww設定
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <p>
-~/emacs.d/init.elに好みで以下を設定する</p>
+~/emacs.d/init.elに好みで以下を設定する<br>
+&#34;shr-external-browser&#34;だと何か警告されるので
+&#34;browse-url-secondary-browser-function&#34;に変更した</p>
 <div class="src src-lisp">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; デフォルトブラウザをEWWにする</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
@@ -132,22 +134,11 @@ eww設定
 <span class="p">(</span><span class="k">setq</span> <span class="nv">eww-search-prefix</span> <span class="s">&#34;http://www.google.co.jp/search?q=&#34;</span><span class="p">)</span>
 
 <span class="c1">;; httpsアクセスに失敗する</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span></code></pre></div>
-</div>
-<p>
-※httpsアクセスに失敗する場合、gnutlsをインストールする</p>
-<div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew install gnutls</code></pre></div>
-</div>
-<p>
-※gnutlsインストール後に、関数&#34;(gnutls-available-p)&#34;を
-C-jで評価したけど、tは返ってこず、以下の通り、何故か変わらなかった?
-けどhttpsはアクセス可能</p>
-<div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\
-Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\
-Key Session\ Ticket Record\ Size\ Limit Extended\ Master\
-Secret Encrypt-then-MAC …)</code></pre></div>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span>
+
+<span class="c1">;; chromeを&#34;&amp;&#34;で起動できるようにする</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-generic-program</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;termux-open-url&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-secondary-browser-function</span> <span class="ss">&#39;browse-url-generic</span><span class="p">)</span></code></pre></div>
 </div>
 <p>
 以上</p>
@@ -170,7 +161,7 @@ Secret Encrypt-then-MAC …)</code></pre></div>
           
   
     <div id="toc" class="Box Box--blue mb-3">
-      <b>Emacs on MacOS で eww</b><nav id="TableOfContents">
+      <b>Emacs on Android で eww</b><nav id="TableOfContents">
 <ul>
 <li><a href="#headline-1">謝辞-参考サイト</a>
 </li>

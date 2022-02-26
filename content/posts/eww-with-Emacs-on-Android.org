@@ -1,0 +1,33 @@
+#+TITLE: Emacs on Android で eww
+#+DATE: 2022-02-26T22:38:56+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: eww Emacs Termux Android
+
+Android(Termux)でもEmacsでewwの設定をしてみた
+
+* 謝辞-参考サイト
+  [[https://misohena.jp/blog/2022-01-22-termux-intro-for-emacs.html][TermuxでEmacsを使うためにやったこと]]\\
+  [[https://futurismo.biz/archives/2950/][Emacs での テキストブラウザ eww を使えるレベルにする]]
+* eww設定
+
+~/emacs.d/init.elに好みで以下を設定する\\
+"shr-external-browser"だと何か警告されるので
+"browse-url-secondary-browser-function"に変更した
+
+#+BEGIN_SRC lisp
+;; デフォルトブラウザをEWWにする
+(setq browse-url-browser-function #'eww-browse-url)
+
+;; Web検索をgoogleに設定
+(setq eww-search-prefix "http://www.google.co.jp/search?q=")
+
+;; httpsアクセスに失敗する
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
+;; chromeを"&"で起動できるようにする
+(setq browse-url-generic-program (executable-find "termux-open-url"))
+(setq browse-url-secondary-browser-function 'browse-url-generic)
+#+END_SRC
+
+以上

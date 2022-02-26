@@ -1,4 +1,4 @@
-#+TITLE: Emacs on MacOS でeww
+#+TITLE: Emacs on MacOS で eww
 #+DATE: 2022-02-13T21:11:36+09:00
 #+DRAFT: false
 #+CATEGORIES[]: 環境構築
@@ -36,14 +36,16 @@ M-x eww
 $ brew install gnutls
 #+END_SRC
 
-※gnutlsインストール後に、以下の関数をC-jで評価したけど、
-tは返ってこず、以下の通り、何故か変わらなかった?
+※gnutlsインストール後に、関数"(gnutls-available-p)"を
+C-jで評価したけど、tは返ってこず、以下の通り、何故か変わらなかった?
 けどhttpsはアクセス可能
 
-#+BEGIN_SRC lisp
-(gnutls-available-p)
+#+BEGIN_SRC
+ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\
+Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\
+Key Session\ Ticket Record\ Size\ Limit Extended\ Master\
+Secret Encrypt-then-MAC …)
 #+END_SRC
-(ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\ Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\ Key Session\ Ticket Record\ Size\ Limit Extended\ Master\ Secret Encrypt-then-MAC ...)
 
 以上
 
