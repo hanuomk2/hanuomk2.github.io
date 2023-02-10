@@ -2,15 +2,15 @@
 #+DATE: 2023-02-10T20:35:42+09:00
 #+DRAFT: false
 #+CATEGORIES[]: アプリ
-#+TAGS[]: Android HoGP
+#+TAGS[]: Android HoGP タッチパッド キーボード Bluetooth
 
 Device Web API Managerはスマホ上で仮想サーバとして動作し、
-デバイスを操作するためのWeb APIを提供します。\\
+デバイスを操作するためのWeb APIを提供します\\
 このWeb APIは、HID over GATT Profile(HoGP)をサポートするので、
-スマホをパソコンのBLEタッチパッド・キーボードにできます。\\
+スマホをパソコンのBLEタッチパッド・キーボードにできます\\
 最近左手デバイスとか流行っているし、Web会議とかでマイクミュート
-どうしようか?キーボードショートカットとか登録できないかな?
-と考えて探してました。
+どうしようか?wordとかexcelのキーボードショートカットをスマホから使えないかな?
+と考えて探してました
 
 * 謝辞-参考サイト
   [[https://gclue.io/dwa/][Device Web API Manager]]\\
@@ -22,8 +22,8 @@ Device Web API Managerはスマホ上で仮想サーバとして動作し、
 上記参考サイト[[https://gclue.io/dwa/][Device Web API Manager]]の[[https://gclue.io/dwa/][Gegtting started Android
 ]]に従ってDevice Web API ManagerをAndroidにインストールします\\
 環境は以下の通り\\
-Google pixel 5a\\
-Andoird OS 12\\
+Google pixel 5a(AndoirdOS 12)
+
 注意点は、「外部IPを許可」を有効にした後に、
 「Device Web API Manager」をオンにすることなんだけど…
 同セグメント内のPCからアクセスできませんでした\\

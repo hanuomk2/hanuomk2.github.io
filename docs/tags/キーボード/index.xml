@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>アプリ on Odaba&#39;s Blog</title>
-    <link>https://hanuomk2.github.io/categories/%E3%82%A2%E3%83%97%E3%83%AA/</link>
-    <description>Recent content in アプリ on Odaba&#39;s Blog</description>
+    <title>キーボード on Odaba&#39;s Blog</title>
+    <link>https://hanuomk2.github.io/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
+    <description>Recent content in キーボード on Odaba&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Fri, 10 Feb 2023 20:35:42 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/categories/%E3%82%A2%E3%83%97%E3%83%AA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 20:35:42 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Device Web API ManagerをAndroidで使ってみる</title>
       <link>https://hanuomk2.github.io/posts/device-web-api-manager/</link>
