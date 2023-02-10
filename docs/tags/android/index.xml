@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sat, 26 Feb 2022 22:38:56 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 20:35:42 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Device Web API ManagerをAndroidで使ってみる</title>
+      <link>https://hanuomk2.github.io/posts/device-web-api-manager/</link>
+      <pubDate>Fri, 10 Feb 2023 20:35:42 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/device-web-api-manager/</guid>
+      <description>Device Web API Managerはスマホ上で仮想サーバとして動作し、 デバイスを操作するためのWeb APIを提供します。 このWeb APIは、HID over GATT Pr</description>
+    </item>
+    
     <item>
       <title>Emacs on Android で eww</title>
       <link>https://hanuomk2.github.io/posts/eww-with-emacs-on-android/</link>

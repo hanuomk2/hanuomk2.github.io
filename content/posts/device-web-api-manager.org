@@ -1,0 +1,44 @@
+#+TITLE: Device Web API ManagerをAndroidで使ってみる
+#+DATE: 2023-02-10T20:35:42+09:00
+#+DRAFT: false
+#+CATEGORIES[]: アプリ
+#+TAGS[]: Android HoGP
+
+Device Web API Managerはスマホ上で仮想サーバとして動作し、
+デバイスを操作するためのWeb APIを提供します。\\
+このWeb APIは、HID over GATT Profile(HoGP)をサポートするので、
+スマホをパソコンのBLEタッチパッド・キーボードにできます。\\
+最近左手デバイスとか流行っているし、Web会議とかでマイクミュート
+どうしようか?キーボードショートカットとか登録できないかな?
+と考えて探してました。
+
+* 謝辞-参考サイト
+  [[https://gclue.io/dwa/][Device Web API Manager]]\\
+  [[https://device-webapi.org][デバイスWebAPIコンソーシアム]]\\
+  [[https://qiita.com/dcm_yamazoe/items/840dadeafbfb2151ca5a][HoGPでAndroid端末をBLEキーボード/マウスにする]]\\
+  [[https://qshino.hatenablog.com/entry/2019/03/23/154755][AndroidをBluetooth keyboardにする]]
+
+* Device Web API Managerのインストールと設定
+上記参考サイト[[https://gclue.io/dwa/][Device Web API Manager]]の[[https://gclue.io/dwa/][Gegtting started Android
+]]に従ってDevice Web API ManagerをAndroidにインストールします\\
+環境は以下の通り\\
+Google pixel 5a\\
+Andoird OS 12\\
+注意点は、「外部IPを許可」を有効にした後に、
+「Device Web API Manager」をオンにすることなんだけど…
+同セグメント内のPCからアクセスできませんでした\\
+「Step4 Device Web APIのデモを起動」はWebpage上の[デモを起動]を使わずに
+Device Web API Managerアプリ内の[Host]アイコンをタッチして下さい\\
+右上[︙]タッチ後、更に「プラグイン設定」をタッチすると
+「Host設定」画面が表示されるので、「デモページ」をタッチ後[インストール]をタッチ\\
+この後、色々セキュリティ関係を許可すると、Webpage(chrome)からGoogle Pixel 5aのカメラを使えます
+
+* HoGPでAndroidをPCに接続してみる
+
+ここも上記参考サイトに従って[[https://github.com/DeviceConnectUsers/deviceconnectusers.github.io/releases/download/v2.4.1-release-20180330-Android/dConnectDeviceHOGP.apk][HoGPプラグインのAPK]]をインストールして下さい\\
+ここも注意点は、HOGPサーバ設定の「Mouse」の項目を「relative」、
+「Keyboard」の項目をONにした後に、設定の「HOGPサーバ」の項目をONにすることです\\
+これでPCにBluetooth接続すると、スマホからPCをタッチバッド・キーボード操作できます
+
+以上
+

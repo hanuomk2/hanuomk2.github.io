@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Device Web API ManagerをAndroidで使ってみる &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Device Web API Managerはスマホ上で仮想サーバとして動作し、 デバイスを操作するためのWeb APIを提供します。 このWeb APIは、HID over GATT Pr|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Device Web API ManagerをAndroidで使ってみる</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E3%82%A2%E3%83%97%E3%83%AA' class="muted-link">
+  <span class="Label Label--gray-darker">アプリ</span>
+</a>
+
+
+
+<a href='/tags/android' class="muted-link">
+  <span class="Label Label--gray">Android</span>
+</a>
+
+<a href='/tags/hogp' class="muted-link">
+  <span class="Label Label--gray">HoGP</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-02-10. Published at: 2023-02-10.">
+        
+          Published: 2023-02-10
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+Device Web API Managerはスマホ上で仮想サーバとして動作し、
+デバイスを操作するためのWeb APIを提供します。<br>
+このWeb APIは、HID over GATT Profile(HoGP)をサポートするので、
+スマホをパソコンのBLEタッチパッド・キーボードにできます。<br>
+最近左手デバイスとか流行っているし、Web会議とかでマイクミュート
+どうしようか?キーボードショートカットとか登録できないかな?
+と考えて探してました。</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p><a href="https://gclue.io/dwa/">Device Web API Manager</a><br>
+  <a href="https://device-webapi.org">デバイスWebAPIコンソーシアム</a><br>
+  <a href="https://qiita.com/dcm_yamazoe/items/840dadeafbfb2151ca5a">HoGPでAndroid端末をBLEキーボード/マウスにする</a><br>
+  <a href="https://qshino.hatenablog.com/entry/2019/03/23/154755">AndroidをBluetooth keyboardにする</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Device Web API Managerのインストールと設定
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>上記参考サイト<a href="https://gclue.io/dwa/">Device Web API Manager</a>の<a href="https://gclue.io/dwa/">Gegtting started Android
+</a>に従ってDevice Web API ManagerをAndroidにインストールします<br>
+環境は以下の通り<br>
+Google pixel 5a<br>
+Andoird OS 12<br>
+注意点は、「外部IPを許可」を有効にした後に、
+「Device Web API Manager」をオンにすることなんだけど…
+同セグメント内のPCからアクセスできませんでした<br>
+「Step4 Device Web APIのデモを起動」はWebpage上の[デモを起動]を使わずに
+Device Web API Managerアプリ内の[Host]アイコンをタッチして下さい<br>
+右上[︙]タッチ後、更に「プラグイン設定」をタッチすると
+「Host設定」画面が表示されるので、「デモページ」をタッチ後[インストール]をタッチ<br>
+この後、色々セキュリティ関係を許可すると、Webpage(chrome)からGoogle Pixel 5aのカメラを使えます</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+HoGPでAndroidをPCに接続してみる
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+ここも上記参考サイトに従って<a href="https://github.com/DeviceConnectUsers/deviceconnectusers.github.io/releases/download/v2.4.1-release-20180330-Android/dConnectDeviceHOGP.apk">HoGPプラグインのAPK</a>をインストールして下さい<br>
+ここも注意点は、HOGPサーバ設定の「Mouse」の項目を「relative」、
+「Keyboard」の項目をONにした後に、設定の「HOGPサーバ」の項目をONにすることです<br>
+これでPCにBluetooth接続すると、スマホからPCをタッチバッド・キーボード操作できます</p>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Device Web API ManagerをAndroidで使ってみる</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">Device Web API Managerのインストールと設定</a>
+</li>
+<li><a href="#headline-3">HoGPでAndroidをPCに接続してみる</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>
