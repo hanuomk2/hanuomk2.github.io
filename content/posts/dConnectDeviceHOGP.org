@@ -1,11 +1,12 @@
-#+TITLE: DeviceConnecHOGPをコンパイルしてみる
+
+#+TITLE: DeviceConnectHoGPをコンパイルしてみる
 #+DATE: 2023-03-26T14:20:40+09:00
 #+DRAFT: false
-#+CATEGORIES[]: アプリ
+#+CATEGORIES[]: プログラミング
 #+TAGS[]: Android HoGP タッチパッド キーボード Bluetooth
 
-前回、HOGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード
-代りにする方法をBLOGに書いたのですが、Web会議でマイクミュートしたいと思い、
+[[https://hanuomk2.github.io/posts/device-web-api-manager/][前回]]、HoGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード
+代りにする方法をBlogに書いたのですが、Web会議でマイクミュートしたいと思い、
 本家[[https://github.com/DeviceConnect/DeviceConnect-Old/tree/main/Android/dConnectDeviceHOGP][dConnectDeviceHOGP]]のSourceをちょっとだけ変更し、
 オンラインミーティングアプリ[[https://www.microsoft.com/ja-jp/microsoft-teams/group-chat-software][Teams]]のキーボードショートカット
 Mic Mute(Ctrl+Shift+m)を追加しています
