@@ -68,5 +68,5 @@ Macだと記号キーが英語キーボードの配列になってましたの�
 
 * アプリ
 
- Releaseでコンパイルしたものは、[[file:plugin-release.apk][ここ]]に置きました。
+ Releaseでコンパイルしたものは、[[https://hanuomk2.github.io/images/plugin-release.apk][ここ]]に置きました。
  上手く動けばいいですが、動かなかったら、ごめんなさい
