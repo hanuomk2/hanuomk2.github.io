@@ -63,7 +63,8 @@ Macだと記号キーが英語キーボードの配列になってましたの�
 
 * 画面
 
- [file:dConnectDeviceHOGP.png]
+{{< figure src="https://hanuomk2.github.io/images/dConnectDeviceHOGP.png" alt="" >}}
+
 
 * アプリ
 
