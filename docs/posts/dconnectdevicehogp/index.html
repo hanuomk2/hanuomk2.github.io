@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DeviceConnecHOGPをコンパイルしてみる &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="前回、HOGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード 代りにする方法をBLOGに書いたのですが、Web会議でマ|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DeviceConnecHOGPをコンパイルしてみる</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E3%82%A2%E3%83%97%E3%83%AA' class="muted-link">
+  <span class="Label Label--gray-darker">アプリ</span>
+</a>
+
+
+
+<a href='/tags/android' class="muted-link">
+  <span class="Label Label--gray">Android</span>
+</a>
+
+<a href='/tags/hogp' class="muted-link">
+  <span class="Label Label--gray">HoGP</span>
+</a>
+
+<a href='/tags/%E3%82%BF%E3%83%83%E3%83%81%E3%83%91%E3%83%83%E3%83%89' class="muted-link">
+  <span class="Label Label--gray">タッチパッド</span>
+</a>
+
+<a href='/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89' class="muted-link">
+  <span class="Label Label--gray">キーボード</span>
+</a>
+
+<a href='/tags/bluetooth' class="muted-link">
+  <span class="Label Label--gray">Bluetooth</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-03-26. Published at: 2023-03-26.">
+        
+          Published: 2023-03-26
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+前回、HOGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード
+代りにする方法をBLOGに書いたのですが、Web会議でマイクミュートしたいと思い、
+<a href="https://github.com/DeviceConnect/DeviceConnect-Old/tree/main/Android/dConnectDeviceHOGP">本家dConnectDeviceHOGP</a>のSourceをちょっとだけ変更し、
+オンラインミーティングアプリ<a href="https://www.microsoft.com/ja-jp/microsoft-teams/group-chat-software">Teams</a>のキーボードショートカット
+Mic Mute(Ctrl+Shift+m)を追加しています</p>
+<p>
+WindowsとMacのPCで、接続確認してみましたが、Windowsだと&#34;\(円)&#34;キーが
+反応しませんでした<br>
+Macだと記号キーが英語キーボードの配列になってましたので、
+環境に合わせて、修正する必要がありそうです</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+<a href="https://qiita.com/dcm_yamazoe/items/840dadeafbfb2151ca5a">HoGPでAndroid端末をBLEキーボード/マウスにする</a><br>
+<a href="https://qshino.hatenablog.com/entry/2019/03/23/154755">Android をBlueToothキーボードにする</a><br>
+<a href="https://github.com/DeviceConnect/DeviceConnect-Android">DeviceConnect-Android</a><br>
+<a href="https://github.com/DeviceConnect/DeviceConnect-Android/wiki/HOGP-Build">HOGP-Build</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+開発環境
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<ul>
+<li>
+<p>MacBook Pro(13-inch, Mid2022) MD101J/A</p>
+</li>
+<li>
+<p>MacOS Catalina 10.15.7</p>
+</li>
+<li>
+<p>Android Studio Chipmunk | 2021.2.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+コンパイル方法
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+このソースをコンパイルするには、以下の手順が必要となります<br>
+詳細は本家のWebPageを参照して下さい</p>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+GitHubアカウントの設定
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p>
+<a href="https://github.com/DeviceConnect/DeviceConnect-Android">DeviceConnect-Android</a>に従って自身のGitHubアカウントでPersonal access tokenを
+作成します</p>
+<ol>
+<li>
+<p>GitHubアカウントでログインします</p>
+</li>
+<li>
+<p>GitHubの[Settings] &gt; [Developer settings] &gt; [Personal access tokens] &gt;
+[Tokens (classic)]を選択後、[Generate new token] &gt; [Generate new token (classic)
+をクリックします</p>
+</li>
+<li>
+<p>scopeはrepo、write:packages、read:packagesにチェックを付けて、
+personal access tokenを作成します</p>
+</li>
+<li>
+<p>プロジェクトのルートディレクトリにgithub.propertiesというファイルを
+作成して配置し、ユーザ名とトークンを入力します</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">gpr.usr<span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
+gpr.key<span class="o">=</span><span class="s2">&#34;トークン&#34;</span></code></pre></div>
+</div>
+<p>
+以下の様に環境変数を設定してもいいみたいです</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GPR_USER</span><span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
+<span class="nb">export</span> <span class="nv">GPR_API_KEY</span><span class="o">=</span><span class="s2">&#34;トークン&#34;</span></code></pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+ソースコードのビルド
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p><a href="https://github.com/DeviceConnect/DeviceConnect-Android/wiki/HOGP-Build">HOGP-Build</a>に従って、Android Studioの[Run] &gt; [Edit Configurations…]を選択後、
+ Launch:を「Notting」に設定し、[▶]をクリックして、デバイスにインストールします</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+画面
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<p>
+ [file:dConnectDeviceHOGP.png]</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+アプリ
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<p>
+ Releaseでコンパイルしたものは、<a href="plugin-release.apk">ここ</a>に置きました。
+ 上手く動けばいいですが、動かなかったら、ごめんなさい</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DeviceConnecHOGPをコンパイルしてみる</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞</a>
+</li>
+<li><a href="#headline-2">開発環境</a>
+</li>
+<li><a href="#headline-3">コンパイル方法</a>
+<ul>
+<li><a href="#headline-4">GitHubアカウントの設定</a>
+</li>
+<li><a href="#headline-5">ソースコードのビルド</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-6">画面</a>
+</li>
+<li><a href="#headline-7">アプリ</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

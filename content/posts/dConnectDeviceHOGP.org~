@@ -1,0 +1,72 @@
+#+TITLE: "DeviceConnecHOGPをコンパイルしてみる"
+#+DATE: 2023-03-26T14:20:40+09:00
+#+DRAFT: false
+#+CATEGORIES[]: アプリ
+#+TAGS[]: Android HoGP タッチパッド キーボード Bluetooth
+
+前回、HOGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード
+代りにする方法をBLOGに書いたのですが、\\
+Web会議でマイクミュートしたいと思い、[[https://github.com/DeviceConnect/DeviceConnect-Old/tree/main/Android/dConnectDeviceHOGP][本家dConnectDeviceHOGP]]のSourceを
+ちょっとだけ変更し、オンラインミーティングアプリ[[https://www.microsoft.com/ja-jp/microsoft-teams/group-chat-software][Teams]]の
+キーボードショートカットMic Mute(Ctrl+Shift+m)を追加しています
+
+WindowsとMacのPCで、接続確認してみましたが、Windowsだと"\(円)"キーが
+反応しませんでした\\
+Macだと記号キーが英語キーボードの配列になってましたので、
+環境に合わせて、修正する必要がありそうです
+
+* 謝辞
+
+[[https://qiita.com/dcm_yamazoe/items/840dadeafbfb2151ca5a][HoGPでAndroid端末をBLEキーボード/マウスにする]]
+[[https://qshino.hatenablog.com/entry/2019/03/23/154755][Android をBlueToothキーボードにする]]
+[[https://github.com/DeviceConnect/DeviceConnect-Android][DeviceConnect-Android]]
+[[https://github.com/DeviceConnect/DeviceConnect-Android/wiki/HOGP-Build][HOGP-Build]]
+
+* 開発環境
+
+ - MacBook Pro(13-inch, Mid2022) MD101J/A
+ - MacOS Catalina 10.15.7
+ - Android Studio Chipmunk | 2021.2.1
+
+* コンパイル方法
+
+このソースをコンパイルするには、以下の手順が必要となります
+詳細は本家のWebPageを参照して下さい
+   
+** GitHubアカウントの設定
+
+[[https://github.com/DeviceConnect/DeviceConnect-Android][DeviceConnect-Android]]に従って自身のGitHubアカウントでPersonal access tokenを
+作成します
+
+1.GitHubアカウントでログインします
+2.GitHubの[Settings] > [Developer settings] > [Personal access tokens] >
+  [Tokens (classic)]を選択後、[Generate new token] > [Generate new token (classic)
+  をクリックします
+3.scopeはrepo、write:packages、read:packagesにチェックを付けて、
+  personal access tokenを作成します
+4.プロジェクトのルートディレクトリにgithub.propertiesというファイルを
+  作成して配置し、ユーザ名とトークンを入力します
+  #+BEGIN_SRC sh
+  gpr.usr="GitHubユーザ名"
+  gpr.key="トークン"
+  #+END_SRC
+  
+  以下の様に環境変数を設定してもいいみたいです
+  #+BEGIN_SRC sh
+  export GPR_USER="GitHubユーザ名"
+  export GPR_API_KEY="トークン"
+  #+END_SRC
+  
+** ソースコードのビルド
+ [[https://github.com/DeviceConnect/DeviceConnect-Android/wiki/HOGP-Build][HOGP-Build]]に従って、Android Studioの[Run] > [Edit Configurations...]を選択後、
+ Launch:を「Notting」に設定し、[▶]をクリックして、デバイスにインストールします
+
+** 画面
+
+ [file:dConnectDeviceHOGP.png]
+
+** アプリ
+
+ Releaseでコンパイルしたものは、[[file:plugin-release.apk][ここ]]に置きました。
+ 上手く動ければいいですが、動かなかったら、ごめんなさい
+  

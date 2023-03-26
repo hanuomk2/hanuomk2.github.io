@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Fri, 10 Feb 2023 20:35:42 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 14:20:40 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DeviceConnecHOGPをコンパイルしてみる</title>
+      <link>https://hanuomk2.github.io/posts/dconnectdevicehogp/</link>
+      <pubDate>Sun, 26 Mar 2023 14:20:40 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/dconnectdevicehogp/</guid>
+      <description>前回、HOGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード 代りにする方法をBLOGに書いたのですが、Web会議でマ</description>
+    </item>
+    
     <item>
       <title>Device Web API ManagerをAndroidで使ってみる</title>
       <link>https://hanuomk2.github.io/posts/device-web-api-manager/</link>
