@@ -1,0 +1,111 @@
+#+TITLE: MacbookPro 2020(Apple M1Pro)でEmacs
+#+DATE: 2023-07-03T22:01:12+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Emacs MacbookPro M1Pro
+
+ずっとMacbook Pro 2012を使っていました。もう最新OSに
+バージョアップできないし、最近ずっと円安だし、買い替えするなら中古だと
+思って、最初はMacbook Pro 13インチを狙っていたのですが、
+14インチとの値段差が少なくなってきたので、Macbook Pro 14インチを
+落札しました。ということで、Emacsのインストールです。
+
+* 謝辞-参考サイト
+[[https://original-game.com/how-to-install-homebrew/][Homebrewのインストール方法を分かりやすく解説（M1 Macも対応]]\\
+[[https://monologu.com/select-emacs-for-mac/][Macに最適なEmacsを選ぶ - アナグマのモノローグ]]
+
+* Homebrewインストール
+[[https://brew.sh/index_ja][Homebrew]]のWebpage通りに、ターミナルに貼り付け実行
+
+#+BEGIN_SRC sh
+  $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+END_SRC
+
+マシンのパスワードを求められるので入力し、しばらく待つ\\
+その後、インストールが完了するので、ターミナルの出力通りにPATHを通す
+
+#+BEGIN_SRC sh
+$ (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/ユーザ名/.zprofile
+$ eval "$(/opt/homebrew/bin/brew shellenv)"
+#+END_SRC
+
+* Emacs Mac Prot版のインストール
+
+今回はrailwaycat氏のバイナリ版をインストールしてみます
+
+#+BEGIN_SRC sh
+$ brew tap railwaycat/emacsmacport
+$ brew install emacs-mac --with-modern-icon --with-imagemagic
+$ ln -s /opt/homebrew/opt/emacs-mca/Emacs.app /Applications
+#+END_SRC
+
+* キーボード設定変更
+
+標準だと日本語切り替えをC-SPC([Control]キーと[スペース]キーの同時押し)で行うので、
+以下の手順でこれを解除
+
+1.「システム設定>キーボード」を選択\\
+2. [キーボードショートカット]をクリック\\
+3. 左側エリアの「入力ソース」を選択\\
+4. 右側エリアの「前の入力ソース選択」のチェックを外し\\
+5. 右側エリアの「入力メニューの次のソースを選択」のチェックを外す
+
+後、ターミナルで使用する時、[Option]キーをメタキーとして認識しないため、以下の手順でこれを設定します。
+ターミナルの「環境設定>キーボード」を選択します。
+「メタキーとして option キーを使用」をチェックします。
+
+* init.elの追加
+
+とりあえずinit.elは以下の様にした
+
+#+BEGIN_SRC lisp
+(mac-auto-ascii-mode 1)
+
+;; 言語を日本語にする
+(set-language-environment 'Japanese)
+;; 極力UTF-8とする
+(prefer-coding-system 'utf-8)
+
+
+;; TABの表示幅。初期値は8
+(setq default-tab-width 4)
+
+;; 質問をy/nで回答する
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;; キーバインディング ;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; C-hをバックスペースにする
+(global-set-key "\C-h" 'delete-backward-char)
+
+;; M-¥で\(バックスラッシュ)を入力する
+(define-key global-map [?\M-¥] "\\")
+
+;;;;;;;;;;;;;;;
+;;; 画面設定 ;;;
+;;;;;;;;;;;;;;;
+
+;; 起動時のメッセージを非表示にする
+(setq inhibit-startup-message t)
+
+;; 行番号・桁番号をモードラインに表示する・しない設定
+(line-number-mode t) ; 行番号。tなら表示、nilなら非表示
+(column-number-mode t) ; 桁番号。tなら表示、nilなら非表示
+
+;; 常にバッファ左に行番号(4桁)を表示する
+(global-linum-mode 1)
+(setq linum-format "%4d")
+
+;; カーソル行を強調表示する
+(global-hl-line-mode t)
+
+;; カーソル行の関数をモードラインに表示する
+(which-function-mode 1)
+
+;; 対応するカッコをハイライト表示する
+(show-paren-mode 1)
+#+END_SRC
+
+以上

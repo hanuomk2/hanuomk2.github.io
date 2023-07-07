@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hanuomk2.github.io/categories/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/tags/emacs/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/tags/m1pro/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/tags/macbookpro/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/posts/emacs-on-applem1pro/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/posts/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/tags/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
+    <loc>https://hanuomk2.github.io/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</loc>
+    <lastmod>2023-07-03T22:01:12+09:00</lastmod>
+  </url><url>
     <loc>https://hanuomk2.github.io/tags/android/</loc>
     <lastmod>2023-03-26T14:20:40+09:00</lastmod>
   </url><url>
     <loc>https://hanuomk2.github.io/tags/bluetooth/</loc>
     <lastmod>2023-03-26T14:20:40+09:00</lastmod>
   </url><url>
-    <loc>https://hanuomk2.github.io/categories/</loc>
-    <lastmod>2023-03-26T14:20:40+09:00</lastmod>
-  </url><url>
     <loc>https://hanuomk2.github.io/posts/dconnectdevicehogp/</loc>
     <lastmod>2023-03-26T14:20:40+09:00</lastmod>
   </url><url>
     <loc>https://hanuomk2.github.io/tags/hogp/</loc>
-    <lastmod>2023-03-26T14:20:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanuomk2.github.io/</loc>
-    <lastmod>2023-03-26T14:20:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanuomk2.github.io/posts/</loc>
-    <lastmod>2023-03-26T14:20:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanuomk2.github.io/tags/</loc>
     <lastmod>2023-03-26T14:20:40+09:00</lastmod>
   </url><url>
     <loc>https://hanuomk2.github.io/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</loc>
@@ -41,9 +56,6 @@
     <loc>https://hanuomk2.github.io/categories/%E3%82%A2%E3%83%97%E3%83%AA/</loc>
     <lastmod>2023-02-10T20:35:42+09:00</lastmod>
   </url><url>
-    <loc>https://hanuomk2.github.io/tags/emacs/</loc>
-    <lastmod>2022-02-26T22:38:56+09:00</lastmod>
-  </url><url>
     <loc>https://hanuomk2.github.io/posts/eww-with-emacs-on-android/</loc>
     <lastmod>2022-02-26T22:38:56+09:00</lastmod>
   </url><url>
@@ -51,9 +63,6 @@
     <lastmod>2022-02-26T22:38:56+09:00</lastmod>
   </url><url>
     <loc>https://hanuomk2.github.io/tags/termux/</loc>
-    <lastmod>2022-02-26T22:38:56+09:00</lastmod>
-  </url><url>
-    <loc>https://hanuomk2.github.io/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</loc>
     <lastmod>2022-02-26T22:38:56+09:00</lastmod>
   </url><url>
     <loc>https://hanuomk2.github.io/posts/eww-with-emacs-on-macos/</loc>

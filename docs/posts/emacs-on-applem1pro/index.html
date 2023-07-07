@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MacbookPro 2020(Apple M1Pro)でEmacs &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="ずっとMacbook Pro 2012を使っていました。もう最新OSに バージョアップできないし、最近ずっと円安だし、買い替えするなら中古だと 思って、|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MacbookPro 2020(Apple M1Pro)でEmacs</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89' class="muted-link">
+  <span class="Label Label--gray-darker">環境構築</span>
+</a>
+
+
+
+<a href='/tags/emacs' class="muted-link">
+  <span class="Label Label--gray">Emacs</span>
+</a>
+
+<a href='/tags/macbookpro' class="muted-link">
+  <span class="Label Label--gray">MacbookPro</span>
+</a>
+
+<a href='/tags/m1pro' class="muted-link">
+  <span class="Label Label--gray">M1Pro</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-07-03. Published at: 2023-07-03.">
+        
+          Published: 2023-07-03
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+ずっとMacbook Pro 2012を使っていました。もう最新OSに
+バージョアップできないし、最近ずっと円安だし、買い替えするなら中古だと
+思って、最初はMacbook Pro 13インチを狙っていたのですが、
+14インチとの値段差が少なくなってきたので、Macbook Pro 14インチを
+落札しました。ということで、Emacsのインストールです。</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p><a href="https://original-game.com/how-to-install-homebrew/">Homebrewのインストール方法を分かりやすく解説（M1 Macも対応</a><br>
+<a href="https://monologu.com/select-emacs-for-mac/">Macに最適なEmacsを選ぶ - アナグマのモノローグ</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Homebrewインストール
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p><a href="https://brew.sh/index_ja">Homebrew</a>のWebpage通りに、ターミナルに貼り付け実行</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ /bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span></code></pre></div>
+</div>
+<p>
+マシンのパスワードを求められるので入力し、しばらく待つ<br>
+その後、インストールが完了するので、ターミナルの出力通りにPATHを通す</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="o">(</span>echo<span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39;</span><span class="o">)</span> &gt;&gt; /Users/ユーザ名/.zprofile
+$ <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>/opt/homebrew/bin/brew shellenv<span class="k">)</span><span class="s2">&#34;</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Emacs Mac Prot版のインストール
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+今回はrailwaycat氏のバイナリ版をインストールしてみます</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew tap railwaycat/emacsmacport
+$ brew install emacs-mac --with-modern-icon --with-imagemagic
+$ ln -s /opt/homebrew/opt/emacs-mac/Emacs.app /Applications</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+キーボード設定変更
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>
+標準だと日本語切り替えをC-SPC([Control]キーと[スペース]キーの同時押し)で行うので、
+以下の手順でこれを解除</p>
+<ol>
+<li>
+<p>「システム設定&gt;キーボード」を選択</p>
+</li>
+<li>
+<p>[キーボードショートカット]をクリック</p>
+</li>
+<li>
+<p>左側エリアの「入力ソース」を選択</p>
+</li>
+<li>
+<p>右側エリアの「前の入力ソース選択」のチェックを外し\</p>
+</li>
+<li>
+<p>右側エリアの「入力メニューの次のソースを選択」のチェックを外す</p>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
+init.elの追加
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
+<p>
+とりあえずinit.elは以下の様にした</p>
+<div class="src src-lisp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">mac-auto-ascii-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; 言語を日本語にする</span>
+<span class="p">(</span><span class="nv">set-language-environment</span> <span class="ss">&#39;Japanese</span><span class="p">)</span>
+<span class="c1">;; 極力UTF-8とする</span>
+<span class="p">(</span><span class="nv">prefer-coding-system</span> <span class="ss">&#39;utf-8</span><span class="p">)</span>
+
+
+<span class="c1">;; TABの表示幅。初期値は8</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">default-tab-width</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">;; 質問をy/nで回答する</span>
+<span class="p">(</span><span class="nv">fset</span> <span class="ss">&#39;yes-or-no-p</span> <span class="ss">&#39;y-or-n-p</span><span class="p">)</span>
+
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="c1">;;; キーバインディング ;;;</span>
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+<span class="c1">;; C-hをバックスペースにする</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-h&#34;</span> <span class="ss">&#39;delete-backward-char</span><span class="p">)</span>
+
+<span class="c1">;; M-¥で\(バックスラッシュ)を入力する</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="nv">[?\M-</span><span class="err">¥</span><span class="nv">]</span> <span class="s">&#34;\\&#34;</span><span class="p">)</span>
+
+<span class="c1">;;;;;;;;;;;;;;;</span>
+<span class="c1">;;; 画面設定 ;;;</span>
+<span class="c1">;;;;;;;;;;;;;;;</span>
+
+<span class="c1">;; 起動時のメッセージを非表示にする</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">inhibit-startup-message</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; 行番号・桁番号をモードラインに表示する・しない設定</span>
+<span class="p">(</span><span class="nv">line-number-mode</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; 行番号。tなら表示、nilなら非表示</span>
+<span class="p">(</span><span class="nv">column-number-mode</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; 桁番号。tなら表示、nilなら非表示</span>
+
+<span class="c1">;; 常にバッファ左に行番号(4桁)を表示する</span>
+<span class="p">(</span><span class="nv">global-linum-mode</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">linum-format</span> <span class="s">&#34;%4d&#34;</span><span class="p">)</span>
+
+<span class="c1">;; カーソル行を強調表示する</span>
+<span class="p">(</span><span class="nv">global-hl-line-mode</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; カーソル行の関数をモードラインに表示する</span>
+<span class="p">(</span><span class="nv">which-function-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; 対応するカッコをハイライト表示する</span>
+<span class="p">(</span><span class="nv">show-paren-mode</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
+</div>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MacbookPro 2020(Apple M1Pro)でEmacs</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">Homebrewインストール</a>
+</li>
+<li><a href="#headline-3">Emacs Mac Prot版のインストール</a>
+</li>
+<li><a href="#headline-4">キーボード設定変更</a>
+</li>
+<li><a href="#headline-5">init.elの追加</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

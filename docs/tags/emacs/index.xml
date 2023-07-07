@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sat, 26 Feb 2022 22:38:56 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jul 2023 22:01:12 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacbookPro 2020(Apple M1Pro)でEmacs</title>
+      <link>https://hanuomk2.github.io/posts/emacs-on-applem1pro/</link>
+      <pubDate>Mon, 03 Jul 2023 22:01:12 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/emacs-on-applem1pro/</guid>
+      <description>ずっとMacbook Pro 2012を使っていました。もう最新OSに バージョアップできないし、最近ずっと円安だし、買い替えするなら中古だと 思って、</description>
+    </item>
+    
     <item>
       <title>Emacs on Android で eww</title>
       <link>https://hanuomk2.github.io/posts/eww-with-emacs-on-android/</link>
