@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacbookPro on My New Hugo Site</title>
+    <link>http://example.org/tags/macbookpro/</link>
+    <description>Recent content in MacbookPro on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Jul 2023 22:56:28 +0900</lastBuildDate><atom:link href="http://example.org/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#34;Github on AppleM1Pro&#34;</title>
+      <link>http://example.org/posts/github-on-applem1pro/</link>
+      <pubDate>Sat, 08 Jul 2023 22:56:28 +0900</pubDate>
+      
+      <guid>http://example.org/posts/github-on-applem1pro/</guid>
+      <description>新しいPC(Macbook pro M1Pro)でも、同じ様にGithubにアクセスしたいので、その方法
+gitの設定 $ git config --global user.name &amp;#34;odaba&amp;#34; $ git config --global user.email &amp;#34;***@****.**.jp&amp;#34; SSH Keyの作成 $ ssh-keygen -t rsa -C &amp;#34;***@****.**.jp&amp;#34; ※この後、パスフレーズを入力
+SSH Keyのテキストコピー 以下のコマンドを実行後、表示されたテキストに対して、選択範囲を指定し、 copy選択
+$ cat .ssh/id_rsa.pub Githubでの設定 ブラウザでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し [New SSH key]クリック
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後 [Add SSH key]クリック
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く
+Githubに接続するテスト $ ssh -T git@github.com yes/noと聞かれるので、yesを入力する
+パスフレーズを聞かれたら、入力する
+この後、以下のように表示されると成功
+Hi hanuomk2! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access.
+以上</description>
+    </item>
+    
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でT-Code</title>
+      <link>http://example.org/posts/t-code-with-emacs-on-applem1pro/</link>
+      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      
+      <guid>http://example.org/posts/t-code-with-emacs-on-applem1pro/</guid>
+      <description>絶滅危惧種のT-Code使いです(笑) T-Code(tc)は、melpaを使用できるのですが、 Emacs 28.2とかだと、やり方が少し変ったみたいです
+謝辞-参考サイト Emulator of GNU Emacs IME patch for Windows (tr-ime)
+melpa設定 init.elに以下を追加
+(package-initialize) (customize-set-variable &amp;#39;package-archives `(,@package-archives (&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;))) T-Code(tc)のインストール 1.Emacsを起動し、以下のコマンドを実行
+M-x package-refresh-contents M-x package-install tc 2.package-install後、以下のコマンドを実行
+M-x tcode-install init.elの設定 (require &amp;#39;tc-setup) (set-input-method &amp;#34;japanese-T-Code&amp;#34;) (define-key global-map [?¥] [?\\]) (define-key global-map [?\C-¥] &amp;#39;toggle-input-method) ;; C-hをバックスペースにする (global-set-key &amp;#34;\C-h&amp;#34; &amp;#39;delete-backward-char) 以上</description>
+    </item>
+    
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でEmacs</title>
+      <link>http://example.org/posts/emacs-on-applem1pro/</link>
+      <pubDate>Mon, 03 Jul 2023 22:01:12 +0900</pubDate>
+      
+      <guid>http://example.org/posts/emacs-on-applem1pro/</guid>
+      <description>ずっとMacbook Pro 2012を使っていました。もう最新OSに バージョアップできないし、最近ずっと円安だし、買い替えするなら中古だと 思って、最初はMacbook Pro 13インチを狙っていたのですが、 14インチとの値段差が少なくなってきたので、Macbook Pro 14インチを 落札しました。ということで、Emacsのインストールです。
+謝辞-参考サイト Homebrewのインストール方法を分かりやすく解説（M1 Macも対応
+Macに最適なEmacsを選ぶ - アナグマのモノローグ
+Homebrewインストール HomebrewのWebpage通りに、ターミナルに貼り付け実行
+$ /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; マシンのパスワードを求められるので入力し、しばらく待つ
+その後、インストールが完了するので、ターミナルの出力通りにPATHを通す
+$ (echo; echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;) &amp;gt;&amp;gt; /Users/ユーザ名/.zprofile $ eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; Emacs Mac Prot版のインストール 今回はrailwaycat氏のバイナリ版をインストールしてみます
+$ brew tap railwaycat/emacsmacport $ brew install emacs-mac --with-modern-icon --with-imagemagic $ ln -s /opt/homebrew/opt/emacs-mac/Emacs.app /Applications キーボード設定変更 標準だと日本語切り替えをC-SPC([Control]キーと[スペース]キーの同時押し)で行うので、 以下の手順でこれを解除
+「システム設定&amp;gt;キーボード」を選択 [キーボードショートカット]をクリック 左側エリアの「入力ソース」を選択 右側エリアの「前の入力ソース選択」のチェックを外し\ 右側エリアの「入力メニューの次のソースを選択」のチェックを外す init.elの追加 とりあえずinit.elは以下の様にした
+(mac-auto-ascii-mode 1) ;; 言語を日本語にする (set-language-environment &amp;#39;Japanese) ;; 極力UTF-8とする (prefer-coding-system &amp;#39;utf-8) ;; TABの表示幅。初期値は8 (setq default-tab-width 4) ;; 質問をy/nで回答する (fset &amp;#39;yes-or-no-p &amp;#39;y-or-n-p) ;;;;;;;;;;;;;;;;;;;;;;; ;;; キーバインディング ;;; ;;;;;;;;;;;;;;;;;;;;;;; ;; C-hをバックスペースにする (global-set-key &amp;#34;\C-h&amp;#34; &amp;#39;delete-backward-char) ;; M-¥で\(バックスラッシュ)を入力する (define-key global-map [?</description>
+    </item>
+    
+  </channel>
+</rss>

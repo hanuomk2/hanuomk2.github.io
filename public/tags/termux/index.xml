@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Termux on My New Hugo Site</title>
+    <link>http://example.org/tags/termux/</link>
+    <description>Recent content in Termux on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Feb 2022 22:38:56 +0900</lastBuildDate><atom:link href="http://example.org/tags/termux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs on Android で eww</title>
+      <link>http://example.org/posts/eww-with-emacs-on-android/</link>
+      <pubDate>Sat, 26 Feb 2022 22:38:56 +0900</pubDate>
+      
+      <guid>http://example.org/posts/eww-with-emacs-on-android/</guid>
+      <description>Android(Termux)でもEmacsでewwの設定をしてみた
+謝辞-参考サイト TermuxでEmacsを使うためにやったこと
+Emacs での テキストブラウザ eww を使えるレベルにする
+eww設定 ~/emacs.d/init.elに好みで以下を設定する
+&amp;#34;shr-external-browser&amp;#34;だと何か警告されるので &amp;#34;browse-url-secondary-browser-function&amp;#34;に変更した
+;; デフォルトブラウザをEWWにする (setq browse-url-browser-function #&amp;#39;eww-browse-url) ;; Web検索をgoogleに設定 (setq eww-search-prefix &amp;#34;http://www.google.co.jp/search?q=&amp;#34;) ;; httpsアクセスに失敗する (setq gnutls-algorithm-priority &amp;#34;NORMAL:-VERS-TLS1.3&amp;#34;) ;; chromeを&amp;#34;&amp;amp;&amp;#34;で起動できるようにする (setq browse-url-generic-program (executable-find &amp;#34;termux-open-url&amp;#34;)) (setq browse-url-secondary-browser-function &amp;#39;browse-url-generic) 以上</description>
+    </item>
+    
+    <item>
+      <title>Hugo on Android でもGithub Pagesにポストする練習</title>
+      <link>http://example.org/posts/github-pages-with-hugo-on-android/</link>
+      <pubDate>Fri, 11 Feb 2022 15:44:01 +0900</pubDate>
+      
+      <guid>http://example.org/posts/github-pages-with-hugo-on-android/</guid>
+      <description>いちおう、Termux on Android で Githubの続き
+MacOSで構築したGithub Pagesへのポスト環境を Androidからもポストできる様にする
+謝辞-参考サイト TermuxでHugo入門の段
+Termuxの設定 Hugo on MacOS で技術情報サイトをGithub Pagesで公開する で行った様に、Guthub Pages用のテンプレートを作成し、 テーマをインストール
+$ pkg add hugo $ hugo new site hanuomk2.github.io $ cd hanuomk2.github.io $ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive $ rm -rf themes/hugo-primer/.git #これがあるとgit add -Aでerrorになるので削除 Githubの該当repositoryからsourceをpull $ git init $ git branch -M main $ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git $ mv archetypes/default.md archetypes/default.org.md #これがあるとpullでerrorになる $ mv config.toml config.old.toml #これがあるとpullでerrorになる $ git pull origin main 後は、Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習 に従ってポストする</description>
+    </item>
+    
+    <item>
+      <title>Termux on Android で Github</title>
+      <link>http://example.org/posts/github-with-termux-on-android/</link>
+      <pubDate>Thu, 10 Feb 2022 21:35:19 +0900</pubDate>
+      
+      <guid>http://example.org/posts/github-with-termux-on-android/</guid>
+      <description>MacOSと同じ様にAndroidからもGithubにアクセスしたいので、その方法
+謝辞-参考サイト Android端末でgitやれるようになるまで
+Termuxにgitとsshのインストール $ pkg add git openssh $ git config --global user.name &amp;#34;odaba&amp;#34; $ git config --global user.email &amp;#34;***@****.**.jp&amp;#34; ※emailアドレスはMacOSから設定したものに合わせる
+SSH Keyの作成 $ ssh-keygen -t rsa -C &amp;#34;***@****.**.jp&amp;#34; ※この後、パスフレーズを入力
+SSH Keyのテキストコピー 以下のコマンドを実行後、表示されたテキストに対して、指で選択範囲を指定し、 copy選択
+$ cat .ssh/id_rsa.pub Githubでの設定 ブラウザChromeでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し [New SSH key]クリック
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後 [Add SSH key]クリック
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く
+TermuxでGithubに接続するテスト $ ssh -T git@github.com yes/noと聞かれるので、yesを入力する
+パスフレーズを聞かれたら、入力する
+この後、以下のように表示されると成功
+Hi hanuomk2! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access.</description>
+    </item>
+    
+    <item>
+      <title>Termux on Android で Emacs</title>
+      <link>http://example.org/posts/emacs-on-termux/</link>
+      <pubDate>Thu, 10 Feb 2022 16:57:08 +0900</pubDate>
+      
+      <guid>http://example.org/posts/emacs-on-termux/</guid>
+      <description>謝辞-参考サイト How to install DDSKK using MELPA
+Emacsインストール $ apt-get install emacs 一度Emacsを起動させて、C-x C-cで閉じる
+melpa 設定 ~/.emacs.d/init.elに以下を追加
+(require &amp;#39;package) (add-to-list &amp;#39;package-archives &amp;#39;(&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;) t) (package-initialize) ddskk インストール ソフトキーボード等ではこっちを使う
+M-x package-install ddskk ddskkの設定は、上記参考サイトを確認のこと
+t-code インストール 絶滅危惧種のTコード使いなので、普段はこっちを使ったりする
+M-x package-install tc M-x tcode-install ~/.emacs.d/init.elに以下を追加
+(C-¥に割り当てできなかったので、C-\とC-x ¥に割り当て)
+(require &amp;#39;tc-setup) (set-input-method &amp;#34;japanese-T-Code&amp;#34;) ;; (define-key global-map [?\C-¥] &amp;#39;toggle-input-method) (global-set-key (kbd &amp;#34;C-\\&amp;#34;) &amp;#39;toggle-input-method) (global-set-key (kbd &amp;#34;C-x \¥&amp;#34;) &amp;#39;toggle-input-method) 以上</description>
+    </item>
+    
+    <item>
+      <title>AndroidでTermux</title>
+      <link>http://example.org/posts/termux-on-android/</link>
+      <pubDate>Thu, 10 Feb 2022 16:40:24 +0900</pubDate>
+      
+      <guid>http://example.org/posts/termux-on-android/</guid>
+      <description>ちょっと前にガラケーからAndroidに乗り換えた
+どうせならEmacsを使いたいので、AndroidにTermuxを入れる事にした
+TermuxはGoogle Playでもダウンロードできるが最新ではないみたいで、 Google PlayでダウンロードできるものはC-SPCが使えないみたいなので、 F-Droidで配布されているものを使うのが良いと思う
+F-Droidのインストール F-Droid公式サイトをChromeでアクセスし、F-Droidアプリをダウンロードする。 ダウンロードしてアプリを開くと、「不明なアプリのインストール」メッセージが 表示されるので、「この提供元のアプリを許可」をONにする
+後、セキリティー対策のため、 [設定]-[アプリ]-[特別なアプリアクセス]-[不明なアプリのインストール] でChromeを「許可しない」に戻す
+Termuxのインストール F-Droidアプリを起動し、「Termux」を検索してインストールする また、アプリを開くと、「不明なアプリのインストール」メッセージが 表示されるので、「この提供元のアプリを許可」をONにする
+ここでも、セキリティー対策のため、 [設定]-[アプリ]-[特別なアプリアクセス]-[不明なアプリのインストール] でF-Droidを「許可しない」に戻す
+Termuxの設定 以下のコマンドを入力して、storageへのアクセスを許可する
+$ apt-get update; apt-get upgrade; termux-setup-storage 「~/.termux/termux.properties」に(Emacs等のエディタをインストールしてから) 以下を設定し、C-SPCを有効にする
+ctrl-space-workaround = true 以下のコマンドで設定を反映する
+$ termux-reload-settings 以上</description>
+    </item>
+    
+  </channel>
+</rss>

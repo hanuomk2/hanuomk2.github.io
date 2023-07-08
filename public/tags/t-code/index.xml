@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>T-Code on My New Hugo Site</title>
+    <link>http://example.org/tags/t-code/</link>
+    <description>Recent content in T-Code on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Jul 2023 11:20:25 +0900</lastBuildDate><atom:link href="http://example.org/tags/t-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でT-Code</title>
+      <link>http://example.org/posts/t-code-with-emacs-on-applem1pro/</link>
+      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      
+      <guid>http://example.org/posts/t-code-with-emacs-on-applem1pro/</guid>
+      <description>絶滅危惧種のT-Code使いです(笑) T-Code(tc)は、melpaを使用できるのですが、 Emacs 28.2とかだと、やり方が少し変ったみたいです
+謝辞-参考サイト Emulator of GNU Emacs IME patch for Windows (tr-ime)
+melpa設定 init.elに以下を追加
+(package-initialize) (customize-set-variable &amp;#39;package-archives `(,@package-archives (&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;))) T-Code(tc)のインストール 1.Emacsを起動し、以下のコマンドを実行
+M-x package-refresh-contents M-x package-install tc 2.package-install後、以下のコマンドを実行
+M-x tcode-install init.elの設定 (require &amp;#39;tc-setup) (set-input-method &amp;#34;japanese-T-Code&amp;#34;) (define-key global-map [?¥] [?\\]) (define-key global-map [?\C-¥] &amp;#39;toggle-input-method) ;; C-hをバックスペースにする (global-set-key &amp;#34;\C-h&amp;#34; &amp;#39;delete-backward-char) 以上</description>
+    </item>
+    
+  </channel>
+</rss>

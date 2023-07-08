@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>プログラミング on My New Hugo Site</title>
+    <link>http://example.org/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
+    <description>Recent content in プログラミング on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Mar 2023 14:20:40 +0900</lastBuildDate><atom:link href="http://example.org/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DeviceConnectHoGPをコンパイルしてみる</title>
+      <link>http://example.org/posts/dconnectdevicehogp/</link>
+      <pubDate>Sun, 26 Mar 2023 14:20:40 +0900</pubDate>
+      
+      <guid>http://example.org/posts/dconnectdevicehogp/</guid>
+      <description>前回、HoGP(HID Over GATT Profile)でスマートフォンをBLEマウス/キーボード 代りにする方法をBlogに書いたのですが、Web会議でマイクミュートしたいと思い、 本家dConnectDeviceHOGPのSourceをちょっとだけ変更し、 オンラインミーティングアプリTeamsのキーボードショートカット Mic Mute(Ctrl+Shift+m)を追加しています
+WindowsとMacのPCで、接続確認してみましたが、Windowsだと&amp;#34;\(円)&amp;#34;キーが 反応しませんでした
+Macだと記号キーが英語キーボードの配列になってましたので、 環境に合わせて、修正する必要がありそうです
+謝辞 HoGPでAndroid端末をBLEキーボード/マウスにする
+Android をBlueToothキーボードにする
+DeviceConnect-Android
+HOGP-Build
+開発環境 MacBook Pro(13-inch, Mid2022) MD101J/A MacOS Catalina 10.15.7 Android Studio Chipmunk | 2021.2.1 コンパイル方法 このソースをコンパイルするには、以下の手順が必要となります
+詳細は本家のWebPageを参照して下さい
+GitHubアカウントの設定 DeviceConnect-Androidに従って自身のGitHubアカウントでPersonal access tokenを 作成します
+GitHubアカウントでログインします GitHubの[Settings] &amp;gt; [Developer settings] &amp;gt; [Personal access tokens] &amp;gt; [Tokens (classic)]を選択後、[Generate new token] &amp;gt; [Generate new token (classic) をクリックします scopeはrepo、write:packages、read:packagesにチェックを付けて、 personal access tokenを作成します プロジェクトのルートディレクトリにgithub.propertiesというファイルを 作成して配置し、ユーザ名とトークンを入力します
+gpr.usr=&amp;#34;GitHubユーザ名&amp;#34; gpr.key=&amp;#34;トークン&amp;#34; 以下の様に環境変数を設定してもいいみたいです</description>
+    </item>
+    
+  </channel>
+</rss>

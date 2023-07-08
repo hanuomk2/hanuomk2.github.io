@@ -1,0 +1,57 @@
+#+TITLE: "Github on AppleM1Pro"
+#+DATE: 2023-07-08T22:56:28+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Github MacbookPro M1Pro
+
+新しいPC(Macbook pro M1Pro)でも、同じ様にGithubにアクセスしたいので、その方法
+
+* gitの設定
+
+#+BEGIN_SRC sh
+$ git config --global user.name "odaba"
+$ git config --global user.email "***@****.**.jp"
+#+END_SRC
+
+* SSH Keyの作成
+
+#+BEGIN_SRC sh
+$ ssh-keygen -t rsa -C "***@****.**.jp"
+#+END_SRC
+
+※この後、パスフレーズを入力
+
+* SSH Keyのテキストコピー
+
+以下のコマンドを実行後、表示されたテキストに対して、選択範囲を指定し、
+copy選択
+
+#+BEGIN_SRC sh
+$ cat .ssh/id_rsa.pub
+#+END_SRC
+
+* Githubでの設定
+
+ブラウザでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し
+[New SSH key]クリック
+
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後
+[Add SSH key]クリック
+
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く
+
+* Githubに接続するテスト
+
+#+BEGIN_SRC sh
+$ ssh -T git@github.com
+#+END_SRC
+
+yes/noと聞かれるので、yesを入力する\\
+パスフレーズを聞かれたら、入力する
+
+この後、以下のように表示されると成功
+
+Hi hanuomk2! You've successfully authenticated,
+but GitHub does not provide shell access.
+
+以上
