@@ -7,9 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Mon, 03 Jul 2023 22:01:12 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/m1pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 11:20:25 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/m1pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MacbookPro 2020(Apple M1Pro)でEmacs</title>
+      <title>MacbookPro 2021(Apple M1Pro)でT-Code</title>
+      <link>https://hanuomk2.github.io/posts/t-code-with-emacs-on-applem1pro/</link>
+      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/t-code-with-emacs-on-applem1pro/</guid>
+      <description>絶滅危惧種のT-Code使いです(笑) T-Code(tc)は、melpaを使用できるのですが、 Emacs 28.2とかだと、やり方が少し変ったみたいで</description>
+    </item>
+    
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でEmacs</title>
       <link>https://hanuomk2.github.io/posts/emacs-on-applem1pro/</link>
       <pubDate>Mon, 03 Jul 2023 22:01:12 +0900</pubDate>
       

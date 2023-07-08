@@ -1,0 +1,51 @@
+#+TITLE: MacbookPro 2021(Apple M1Pro)でT-Code
+#+DATE: 2023-07-08T11:20:25+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Emacs T-Code MacbookPro M1Pro
+
+絶滅危惧種のT-Code使いです(笑)
+T-Code(tc)は、[[https://melpa.org/][melpa]]を使用できるのですが、
+Emacs 28.2とかだと、やり方が少し変ったみたいです
+
+* 謝辞-参考サイト
+[[https://github.com/trueroad/tr-emacs-ime-module][Emulator of GNU Emacs IME patch for Windows (tr-ime)]]
+
+* melpa設定
+
+init.elに以下を追加
+
+#+BEGIN_SRC lisp
+(package-initialize)
+(customize-set-variable 'package-archives
+                        `(,@package-archives
+                          ("melpa" . "https://melpa.org/packages/")))
+#+END_SRC
+
+* T-Code(tc)のインストール
+
+1.Emacsを起動し、以下のコマンドを実行
+#+BEGIN_SRC lisp
+M-x package-refresh-contents
+M-x package-install
+tc
+#+END_SRC
+
+2.package-install後、以下のコマンドを実行
+#+BEGIN_SRC lisp
+M-x tcode-install
+#+END_SRC
+
+* init.elの設定
+
+#+BEGIN_SRC lisp
+(require 'tc-setup)
+(set-input-method "japanese-T-Code")
+(define-key global-map [?¥] [?\\])
+(define-key global-map [?\C-¥] 'toggle-input-method)
+;; C-hをバックスペースにする
+(global-set-key "\C-h" 'delete-backward-char)
+#+END_SRC
+
+以上
+

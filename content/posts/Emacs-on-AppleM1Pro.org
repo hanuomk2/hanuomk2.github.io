@@ -1,4 +1,4 @@
-#+TITLE: MacbookPro 2020(Apple M1Pro)でEmacs
+#+TITLE: MacbookPro 2021(Apple M1Pro)でEmacs
 #+DATE: 2023-07-03T22:01:12+09:00
 #+DRAFT: false
 #+CATEGORIES[]: 環境構築
