@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sat, 08 Jul 2023 22:56:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jul 2023 21:37:11 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でGithub Pagesへのポスト環境</title>
+      <link>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-applem1pro/</link>
+      <pubDate>Sun, 09 Jul 2023 21:37:11 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-applem1pro/</guid>
+      <description>新しいPC(Macbook Pro M1Pro)でも、Github Pagesへのポスト環境を構築 謝辞-参考サイト emacs-easy-hugo Hugoとemacsの融合(eas</description>
+    </item>
+    
     <item>
       <title>MacbookPro 2021(Apple M1Pro)でもGithub</title>
       <link>https://hanuomk2.github.io/posts/github-on-applem1pro/</link>
