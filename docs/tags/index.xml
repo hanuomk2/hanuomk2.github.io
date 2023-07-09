@@ -7,20 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sat, 08 Jul 2023 11:20:25 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 22:56:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Emacs</title>
-      <link>https://hanuomk2.github.io/tags/emacs/</link>
-      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      <title>Github</title>
+      <link>https://hanuomk2.github.io/tags/github/</link>
+      <pubDate>Sat, 08 Jul 2023 22:56:28 +0900</pubDate>
       
-      <guid>https://hanuomk2.github.io/tags/emacs/</guid>
+      <guid>https://hanuomk2.github.io/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>M1Pro</title>
       <link>https://hanuomk2.github.io/tags/m1pro/</link>
-      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      <pubDate>Sat, 08 Jul 2023 22:56:28 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/tags/m1pro/</guid>
       <description></description>
@@ -29,9 +29,18 @@
     <item>
       <title>MacbookPro</title>
       <link>https://hanuomk2.github.io/tags/macbookpro/</link>
-      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      <pubDate>Sat, 08 Jul 2023 22:56:28 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/tags/macbookpro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>https://hanuomk2.github.io/tags/emacs/</link>
+      <pubDate>Sat, 08 Jul 2023 11:20:25 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/emacs/</guid>
       <description></description>
     </item>
     
@@ -140,15 +149,6 @@
       <pubDate>Fri, 11 Feb 2022 15:44:01 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://hanuomk2.github.io/tags/github/</link>
-      <pubDate>Thu, 10 Feb 2022 21:35:19 +0900</pubDate>
-      
-      <guid>https://hanuomk2.github.io/tags/github/</guid>
       <description></description>
     </item>
     

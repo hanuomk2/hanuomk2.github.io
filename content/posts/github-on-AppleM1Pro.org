@@ -1,4 +1,4 @@
-#+TITLE: "Github on AppleM1Pro"
+#+TITLE: MacbookPro 2021(Apple M1Pro)でもGithub
 #+DATE: 2023-07-08T22:56:28+09:00
 #+DRAFT: false
 #+CATEGORIES[]: 環境構築

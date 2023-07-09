@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sat, 08 Jul 2023 11:20:25 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 22:56:28 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でもGithub</title>
+      <link>https://hanuomk2.github.io/posts/github-on-applem1pro/</link>
+      <pubDate>Sat, 08 Jul 2023 22:56:28 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/github-on-applem1pro/</guid>
+      <description>新しいPC(Macbook pro M1Pro)でも、同じ様にGithubにアクセスしたいので、その方法 gitの設定 $ git config --global user.name &amp;#34;odaba&amp;#34; $ git config --global user.email &amp;#34;***@****.**.jp&amp;#34; SSH Key</description>
+    </item>
+    
     <item>
       <title>MacbookPro 2021(Apple M1Pro)でT-Code</title>
       <link>https://hanuomk2.github.io/posts/t-code-with-emacs-on-applem1pro/</link>

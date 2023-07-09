@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MacbookPro 2021(Apple M1Pro)でもGithub &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="新しいPC(Macbook pro M1Pro)でも、同じ様にGithubにアクセスしたいので、その方法 gitの設定 $ git config --global user.name &amp;#34;odaba&amp;#34; $ git config --global user.email &amp;#34;***@****.**.jp&amp;#34; SSH Key|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MacbookPro 2021(Apple M1Pro)でもGithub</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89' class="muted-link">
+  <span class="Label Label--gray-darker">環境構築</span>
+</a>
+
+
+
+<a href='/tags/github' class="muted-link">
+  <span class="Label Label--gray">Github</span>
+</a>
+
+<a href='/tags/macbookpro' class="muted-link">
+  <span class="Label Label--gray">MacbookPro</span>
+</a>
+
+<a href='/tags/m1pro' class="muted-link">
+  <span class="Label Label--gray">M1Pro</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-07-08. Published at: 2023-07-08.">
+        
+          Published: 2023-07-08
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+新しいPC(Macbook pro M1Pro)でも、同じ様にGithubにアクセスしたいので、その方法</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+gitの設定
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git config --global user.name <span class="s2">&#34;odaba&#34;</span>
+$ git config --global user.email <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+SSH Keyの作成
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh-keygen -t rsa -C <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
+</div>
+<p>
+※この後、パスフレーズを入力</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+SSH Keyのテキストコピー
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+以下のコマンドを実行後、表示されたテキストに対して、選択範囲を指定し、
+copy選択</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ cat .ssh/id_rsa.pub</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+Githubでの設定
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>
+ブラウザでGithubにログインし、「Setting」…「SSH and GPG keys」を選択し
+[New SSH key]クリック</p>
+<p>
+適当に「Title」を入力し、「Key」に上記copyしたテキストを貼り付け後
+[Add SSH key]クリック</p>
+<p>
+無事GithubにSSH Keyが登録されると、上記メールアドレスにメールが届く</p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
+Githubに接続するテスト
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh -T git@github.com</code></pre></div>
+</div>
+<p>
+yes/noと聞かれるので、yesを入力する<br>
+パスフレーズを聞かれたら、入力する</p>
+<p>
+この後、以下のように表示されると成功</p>
+<p>
+Hi hanuomk2! You&#39;ve successfully authenticated,
+but GitHub does not provide shell access.</p>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MacbookPro 2021(Apple M1Pro)でもGithub</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">gitの設定</a>
+</li>
+<li><a href="#headline-2">SSH Keyの作成</a>
+</li>
+<li><a href="#headline-3">SSH Keyのテキストコピー</a>
+</li>
+<li><a href="#headline-4">Githubでの設定</a>
+</li>
+<li><a href="#headline-5">Githubに接続するテスト</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>
