@@ -133,11 +133,11 @@ Termuxの設定
 で行った様に、Guthub Pages用のテンプレートを作成し、
 テーマをインストール</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ pkg add hugo
-$ hugo new site hanuomk2.github.io
-$ <span class="nb">cd</span> hanuomk2.github.io
-$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive
-$ rm -rf themes/hugo-primer/.git <span class="c1">#これがあるとgit add -Aでerrorになるので削除</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pkg add hugo
+</span></span><span class="line"><span class="cl">$ hugo new site hanuomk2.github.io
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> hanuomk2.github.io
+</span></span><span class="line"><span class="cl">$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive
+</span></span><span class="line"><span class="cl">$ rm -rf themes/hugo-primer/.git <span class="c1">#これがあるとgit add -Aでerrorになるので削除</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -147,12 +147,12 @@ Githubの該当repositoryからsourceをpull
 </h2>
 <div id="outline-text-headline-3" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git init
-$ git branch -M main
-$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
-$ mv archetypes/default.md archetypes/default.org.md <span class="c1">#これがあるとpullでerrorになる</span>
-$ mv config.toml config.old.toml <span class="c1">#これがあるとpullでerrorになる</span>
-$ git pull origin main</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ git init
+</span></span><span class="line"><span class="cl">$ git branch -M main
+</span></span><span class="line"><span class="cl">$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
+</span></span><span class="line"><span class="cl">$ mv archetypes/default.md archetypes/default.org.md <span class="c1">#これがあるとpullでerrorになる</span>
+</span></span><span class="line"><span class="cl">$ mv config.toml config.old.toml <span class="c1">#これがあるとpullでerrorになる</span>
+</span></span><span class="line"><span class="cl">$ git pull origin main</span></span></code></pre></div>
 </div>
 <p>
 後は、<a href="https://hanuomk2.github.io/posts/post-orgmode-format-text-with-hugo-on-macos/">Hugo on MacOS環境でOrgmodeフォーマット記事をポストする練習</a>

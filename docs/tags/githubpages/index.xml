@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sun, 09 Jul 2023 21:37:11 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/githubpages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jul 2023 22:42:04 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/githubpages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>easy-hugoのPreviewでPreviewできなかった件</title>
+      <link>https://hanuomk2.github.io/posts/404-not-found-on-hugo/</link>
+      <pubDate>Mon, 10 Jul 2023 22:42:04 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/404-not-found-on-hugo/</guid>
+      <description>謝辞-参考サイト hugoでデプロイ後に404になった やったこと easy-hugoでPreviewするとEmacsがカタマリました hugo serve</description>
+    </item>
+    
     <item>
       <title>MacbookPro 2021(Apple M1Pro)でGithub Pagesへのポスト環境</title>
       <link>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-applem1pro/</link>

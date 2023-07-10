@@ -126,7 +126,7 @@ HomebrewでHugoをインストール
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew install hugo</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ brew install hugo</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -139,10 +139,10 @@ Github Pages用のテンプレートの作成
 hugo new site {ユーザ名}.github.io<br>
 私の例だと以下の通り</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new site hanuomk2.github.io
-$ <span class="nb">cd</span> hanuomk2.github.io
-$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive
-$ rm -rf themes/hugo-primer/.git <span class="c1">#これがあるとgit add -Aでerrorになるので削除</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo new site hanuomk2.github.io
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> hanuomk2.github.io
+</span></span><span class="line"><span class="cl">$ git clone https://github.com/qqhann/hugo-primer.git themes/hugo-primer --recursive
+</span></span><span class="line"><span class="cl">$ rm -rf themes/hugo-primer/.git <span class="c1">#これがあるとgit add -Aでerrorになるので削除</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -152,13 +152,13 @@ Githubの該当repositoryからsourceをpull
 </h2>
 <div id="outline-text-headline-4" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git init
-$ git branch -M main
-$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
-$ mv archetypes/default.md archetypes/default.org.md <span class="c1">#これがあるとpullでerrorにな</span>
-る
-$ mv config.toml config.old.toml <span class="c1">#これがあるとpullでerrorになる</span>
-$ git pull origin main</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ git init
+</span></span><span class="line"><span class="cl">$ git branch -M main
+</span></span><span class="line"><span class="cl">$ git remote add origin git@github.com:hanuomk2/hanuomk2.github.io.git
+</span></span><span class="line"><span class="cl">$ mv archetypes/default.md archetypes/default.org.md <span class="c1">#これがあるとpullでerrorにな</span>
+</span></span><span class="line"><span class="cl">る
+</span></span><span class="line"><span class="cl">$ mv config.toml config.old.toml <span class="c1">#これがあるとpullでerrorになる</span>
+</span></span><span class="line"><span class="cl">$ git pull origin main</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -170,8 +170,8 @@ easy-hugo インストール
 <p>
 emacs上で以下のコマンドを実行(<a href="https://melpa.org/">MELPA</a>をあらかじめ設定しておく)</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x package-install
-easy-hugo</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">M-x package-install
+</span></span><span class="line"><span class="cl">easy-hugo</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -181,20 +181,20 @@ easy-hugo</code></pre></div>
 </h2>
 <div id="outline-text-headline-6" class="outline-text-2">
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-basedir</span> <span class="s">&#34;~/hanuomk2.github.io/&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-url</span> <span class="s">&#34;https://hanuomk2.github.io&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-sshdomain</span> <span class="s">&#34;github.com&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-root</span> <span class="s">&#34;/&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-previewtime</span> <span class="s">&#34;300&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-postdir</span> <span class="s">&#34;content/posts&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-default-ext</span> <span class="s">&#34;.org&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-c C-e&#34;</span><span class="p">)</span> <span class="ss">&#39;easy-hugo</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-basedir</span> <span class="s">&#34;~/hanuomk2.github.io/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-url</span> <span class="s">&#34;https://hanuomk2.github.io&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-sshdomain</span> <span class="s">&#34;github.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-root</span> <span class="s">&#34;/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-previewtime</span> <span class="s">&#34;300&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-postdir</span> <span class="s">&#34;content/posts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">easy-hugo-default-ext</span> <span class="s">&#34;.org&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-c C-e&#34;</span><span class="p">)</span> <span class="ss">&#39;easy-hugo</span><span class="p">)</span></span></span></code></pre></div>
 </div>
 <p>
 上記参照サイトに従って、パスフレーズを入力しなくてもpushできるようにしておく<br>
 また下記のコマンドでdeploy.shを実行できるようにしておく</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ chmod +x deploy.sh</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ chmod +x deploy.sh</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -207,7 +207,7 @@ easy-hugo起動
 emacs上で以下のコマンドを実行<br>
 (上記参照サイトに従って、PATH&#34;/usr/local/bin/hugo&#34;をemacs上で認識させておく)</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x easy-hugo</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">M-x easy-hugo</span></span></code></pre></div>
 </div>
 <p>
 ※easy-hugoを使ってみたけど、previewできなかった</p>

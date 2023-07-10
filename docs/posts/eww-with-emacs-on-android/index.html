@@ -127,18 +127,18 @@ eww設定
 &#34;shr-external-browser&#34;だと何か警告されるので
 &#34;browse-url-secondary-browser-function&#34;に変更した</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; デフォルトブラウザをEWWにする</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
-
-<span class="c1">;; Web検索をgoogleに設定</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">eww-search-prefix</span> <span class="s">&#34;http://www.google.co.jp/search?q=&#34;</span><span class="p">)</span>
-
-<span class="c1">;; httpsアクセスに失敗する</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span>
-
-<span class="c1">;; chromeを&#34;&amp;&#34;で起動できるようにする</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-generic-program</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;termux-open-url&#34;</span><span class="p">))</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-secondary-browser-function</span> <span class="ss">&#39;browse-url-generic</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="c1">;; デフォルトブラウザをEWWにする</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Web検索をgoogleに設定</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">eww-search-prefix</span> <span class="s">&#34;http://www.google.co.jp/search?q=&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; httpsアクセスに失敗する</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; chromeを&#34;&amp;&#34;で起動できるようにする</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-generic-program</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;termux-open-url&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-secondary-browser-function</span> <span class="ss">&#39;browse-url-generic</span><span class="p">)</span></span></span></code></pre></div>
 </div>
 <p>
 以上</p>

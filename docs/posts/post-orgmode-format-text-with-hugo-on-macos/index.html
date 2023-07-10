@@ -121,18 +121,18 @@ archetypes/default.org を設定
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> archetypes/default.org
-$ cp default.md default.org</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> archetypes/default.org
+</span></span><span class="line"><span class="cl">$ cp default.md default.org</span></span></code></pre></div>
 </div>
 <p>
 この後、前記参考サイトの様な形で、default.orgを設定<br>
 例えばこんな感じ</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">#+TITLE: {{ replace .Name &#34;-&#34; &#34; &#34; | title }}
-#+DATE: {{ .Date }}
-#+DRAFT: false
-#+CATEGORIES[]:
-#+TAGS[]:</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+TITLE: {{ replace .Name &#34;-&#34; &#34; &#34; | title }}
+</span></span><span class="line"><span class="cl">#+DATE: {{ .Date }}
+</span></span><span class="line"><span class="cl">#+DRAFT: false
+</span></span><span class="line"><span class="cl">#+CATEGORIES[]:
+</span></span><span class="line"><span class="cl">#+TAGS[]:</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -142,7 +142,7 @@ $ cp default.md default.org</code></pre></div>
 </h2>
 <div id="outline-text-headline-3" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/new-article.org</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo new posts/new-article.org</span></span></code></pre></div>
 </div>
 <p>
 contents/posts/new-article.orgを編集する</p>
@@ -154,7 +154,7 @@ localhostでblogサーバを確認する
 </h2>
 <div id="outline-text-headline-4" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo server</span></span></code></pre></div>
 </div>
 <p>
 この後、<a href="http://localhost:1313/"><a href="http://localhost:1313/">http://localhost:1313/</a></a>にブラウザでアクセスする</p>
@@ -166,11 +166,11 @@ repositoryにpushする
 </h2>
 <div id="outline-text-headline-5" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo
-$ git add -A
-$ git rm --cached -r themes/hugo-primer
-$ git commit -m <span class="s2">&#34;a new article&#34;</span>
-$ git push -u origin main</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo
+</span></span><span class="line"><span class="cl">$ git add -A
+</span></span><span class="line"><span class="cl">$ git rm --cached -r themes/hugo-primer
+</span></span><span class="line"><span class="cl">$ git commit -m <span class="s2">&#34;a new article&#34;</span>
+</span></span><span class="line"><span class="cl">$ git push -u origin main</span></span></code></pre></div>
 </div>
 <p>
 以上</p>

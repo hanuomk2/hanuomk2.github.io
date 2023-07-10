@@ -126,10 +126,10 @@ melpa設定
 <p>
 init.elに以下を追加</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">customize-set-variable</span> <span class="ss">&#39;package-archives</span>
-                        <span class="o">`</span><span class="p">(</span><span class="o">,@</span><span class="nv">package-archives</span>
-                          <span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)))</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">customize-set-variable</span> <span class="ss">&#39;package-archives</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">`</span><span class="p">(</span><span class="o">,@</span><span class="nv">package-archives</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)))</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -141,14 +141,14 @@ T-Code(tc)のインストール
 <p>
 1.Emacsを起動し、以下のコマンドを実行</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">package-refresh-contents</span>
-<span class="nv">M-x</span> <span class="nv">package-install</span>
-<span class="nv">tc</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">package-refresh-contents</span>
+</span></span><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">package-install</span>
+</span></span><span class="line"><span class="cl"><span class="nv">tc</span></span></span></code></pre></div>
 </div>
 <p>
 2.package-install後、以下のコマンドを実行</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">tcode-install</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">tcode-install</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -158,12 +158,12 @@ init.elの設定
 </h2>
 <div id="outline-text-headline-4" class="outline-text-2">
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;tc-setup</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">set-input-method</span> <span class="s">&#34;japanese-T-Code&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="nv">[?</span><span class="err">¥</span><span class="nv">]</span> <span class="nv">[?\\]</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="nv">[?\C-</span><span class="err">¥</span><span class="nv">]</span> <span class="ss">&#39;toggle-input-method</span><span class="p">)</span>
-<span class="c1">;; C-hをバックスペースにする</span>
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-h&#34;</span> <span class="ss">&#39;delete-backward-char</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;tc-setup</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">set-input-method</span> <span class="s">&#34;japanese-T-Code&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="nv">[?</span><span class="err">¥</span><span class="nv">]</span> <span class="nv">[?\\]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="nv">[?\C-</span><span class="err">¥</span><span class="nv">]</span> <span class="ss">&#39;toggle-input-method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; C-hをバックスペースにする</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-h&#34;</span> <span class="ss">&#39;delete-backward-char</span><span class="p">)</span></span></span></code></pre></div>
 </div>
 <p>
 以上</p>

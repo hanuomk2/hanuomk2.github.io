@@ -106,7 +106,7 @@ if (!doNotTrack) {
 ewwはEmacs上で動作するwebブラウザで標準インストール済<br>
 以下のコマンドで起動する</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">eww</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">eww</span></span></span></code></pre></div>
 </div>
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
@@ -125,29 +125,29 @@ eww設定
 <p>
 ~/emacs.d/init.elに好みで以下を設定する</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; デフォルトブラウザをEWWにする</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
-
-<span class="c1">;; Web検索をgoogleに設定</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">eww-search-prefix</span> <span class="s">&#34;http://www.google.co.jp/search?q=&#34;</span><span class="p">)</span>
-
-<span class="c1">;; httpsアクセスに失敗する</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="c1">;; デフォルトブラウザをEWWにする</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">browse-url-browser-function</span> <span class="nf">#&#39;</span><span class="nv">eww-browse-url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Web検索をgoogleに設定</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">eww-search-prefix</span> <span class="s">&#34;http://www.google.co.jp/search?q=&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; httpsアクセスに失敗する</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">setq</span> <span class="nv">gnutls-algorithm-priority</span> <span class="s">&#34;NORMAL:-VERS-TLS1.3&#34;</span><span class="p">)</span></span></span></code></pre></div>
 </div>
 <p>
 ※httpsアクセスに失敗する場合、gnutlsをインストールする</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ brew install gnutls</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ brew install gnutls</span></span></code></pre></div>
 </div>
 <p>
 ※gnutlsインストール後に、関数&#34;(gnutls-available-p)&#34;を
 C-jで評価したけど、tは返ってこず、以下の通り、何故か変わらなかった?
 けどhttpsはアクセス可能</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\
-Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\
-Key Session\ Ticket Record\ Size\ Limit Extended\ Master\
-Secret Encrypt-then-MAC …)</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">ClientHello\ Padding Key\ Share Post\ Handshake\ Auth PSK\ Key\
+</span></span><span class="line"><span class="cl">Exchange\ Modes Cookie Supported\ Versions Early\ Data Pre\ Shared\
+</span></span><span class="line"><span class="cl">Key Session\ Ticket Record\ Size\ Limit Extended\ Master\
+</span></span><span class="line"><span class="cl">Secret Encrypt-then-MAC …)</span></span></code></pre></div>
 </div>
 <p>
 以上</p>

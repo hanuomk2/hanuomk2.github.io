@@ -110,8 +110,8 @@ gitの設定
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git config --global user.name <span class="s2">&#34;odaba&#34;</span>
-$ git config --global user.email <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ git config --global user.name <span class="s2">&#34;odaba&#34;</span>
+</span></span><span class="line"><span class="cl">$ git config --global user.email <span class="s2">&#34;***@****.**.jp&#34;</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -121,7 +121,7 @@ SSH Keyの作成
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh-keygen -t rsa -C <span class="s2">&#34;***@****.**.jp&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ ssh-keygen -t rsa -C <span class="s2">&#34;***@****.**.jp&#34;</span></span></span></code></pre></div>
 </div>
 <p>
 ※この後、パスフレーズを入力</p>
@@ -136,7 +136,7 @@ SSH Keyのテキストコピー
 以下のコマンドを実行後、表示されたテキストに対して、選択範囲を指定し、
 copy選択</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ cat .ssh/id_rsa.pub</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ cat .ssh/id_rsa.pub</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -161,7 +161,7 @@ Githubに接続するテスト
 </h2>
 <div id="outline-text-headline-5" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ssh -T git@github.com</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ ssh -T git@github.com</span></span></code></pre></div>
 </div>
 <p>
 yes/noと聞かれるので、yesを入力する<br>

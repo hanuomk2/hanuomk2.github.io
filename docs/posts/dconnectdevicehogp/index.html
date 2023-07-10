@@ -139,15 +139,9 @@ Macだと記号キーが英語キーボードの配列になってましたの�
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <ul>
-<li>
-<p>MacBook Pro(13-inch, Mid2022) MD101J/A</p>
-</li>
-<li>
-<p>MacOS Catalina 10.15.7</p>
-</li>
-<li>
-<p>Android Studio Chipmunk | 2021.2.1</p>
-</li>
+<li>MacBook Pro(13-inch, Mid2022) MD101J/A</li>
+<li>MacOS Catalina 10.15.7</li>
+<li>Android Studio Chipmunk | 2021.2.1</li>
 </ul>
 </div>
 </div>
@@ -168,30 +162,24 @@ GitHubアカウントの設定
 <a href="https://github.com/DeviceConnect/DeviceConnect-Android">DeviceConnect-Android</a>に従って自身のGitHubアカウントでPersonal access tokenを
 作成します</p>
 <ol>
-<li>
-<p>GitHubアカウントでログインします</p>
-</li>
-<li>
-<p>GitHubの[Settings] &gt; [Developer settings] &gt; [Personal access tokens] &gt;
+<li>GitHubアカウントでログインします</li>
+<li>GitHubの[Settings] &gt; [Developer settings] &gt; [Personal access tokens] &gt;
 [Tokens (classic)]を選択後、[Generate new token] &gt; [Generate new token (classic)
-をクリックします</p>
-</li>
-<li>
-<p>scopeはrepo、write:packages、read:packagesにチェックを付けて、
-personal access tokenを作成します</p>
-</li>
+をクリックします</li>
+<li>scopeはrepo、write:packages、read:packagesにチェックを付けて、
+personal access tokenを作成します</li>
 <li>
 <p>プロジェクトのルートディレクトリにgithub.propertiesというファイルを
 作成して配置し、ユーザ名とトークンを入力します</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">gpr.usr<span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
-gpr.key<span class="o">=</span><span class="s2">&#34;トークン&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gpr.usr<span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
+</span></span><span class="line"><span class="cl">gpr.key<span class="o">=</span><span class="s2">&#34;トークン&#34;</span></span></span></code></pre></div>
 </div>
 <p>
 以下の様に環境変数を設定してもいいみたいです</p>
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GPR_USER</span><span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
-<span class="nb">export</span> <span class="nv">GPR_API_KEY</span><span class="o">=</span><span class="s2">&#34;トークン&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GPR_USER</span><span class="o">=</span><span class="s2">&#34;GitHubユーザ名&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GPR_API_KEY</span><span class="o">=</span><span class="s2">&#34;トークン&#34;</span></span></span></code></pre></div>
 </div>
 </li>
 </ol>

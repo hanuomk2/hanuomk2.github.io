@@ -116,7 +116,7 @@ Emacsインストール
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <div class="src src-sh">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ apt-get install emacs</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ apt-get install emacs</span></span></code></pre></div>
 </div>
 <p>
 一度Emacsを起動させて、C-x C-cで閉じる</p>
@@ -130,9 +130,9 @@ melpa 設定
 <p>
 ~/.emacs.d/init.elに以下を追加</p>
 <div class="src src-lisp">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -144,8 +144,8 @@ ddskk インストール
 <p>
 ソフトキーボード等ではこっちを使う</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x package-install
-ddskk</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">M-x package-install
+</span></span><span class="line"><span class="cl">ddskk</span></span></code></pre></div>
 </div>
 <p>
 ddskkの設定は、上記参考サイトを確認のこと</p>
@@ -159,20 +159,20 @@ t-code インストール
 <p>
 絶滅危惧種の<a href="https://github.com/kanchoku/tc">Tコード</a>使いなので、普段はこっちを使ったりする</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">M-x package-install
-tc
-
-M-x tcode-install</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">M-x package-install
+</span></span><span class="line"><span class="cl">tc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">M-x tcode-install</span></span></code></pre></div>
 </div>
 <p>
 ~/.emacs.d/init.elに以下を追加<br>
 (C-¥に割り当てできなかったので、C-\とC-x ¥に割り当て)</p>
 <div class="src src-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(require &#39;tc-setup)
-(set-input-method &#34;japanese-T-Code&#34;)
-;; (define-key global-map [?\C-¥] &#39;toggle-input-method)
-(global-set-key (kbd &#34;C-\\&#34;) &#39;toggle-input-method)
-(global-set-key (kbd &#34;C-x \¥&#34;) &#39;toggle-input-method)</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(require &#39;tc-setup)
+</span></span><span class="line"><span class="cl">(set-input-method &#34;japanese-T-Code&#34;)
+</span></span><span class="line"><span class="cl">;; (define-key global-map [?\C-¥] &#39;toggle-input-method)
+</span></span><span class="line"><span class="cl">(global-set-key (kbd &#34;C-\\&#34;) &#39;toggle-input-method)
+</span></span><span class="line"><span class="cl">(global-set-key (kbd &#34;C-x \¥&#34;) &#39;toggle-input-method)</span></span></code></pre></div>
 </div>
 <p>
 以上</p>
