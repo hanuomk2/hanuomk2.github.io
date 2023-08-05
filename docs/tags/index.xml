@@ -7,29 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Mon, 10 Jul 2023 22:42:04 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 16:54:40 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GithubPages</title>
-      <link>https://hanuomk2.github.io/tags/githubpages/</link>
-      <pubDate>Mon, 10 Jul 2023 22:42:04 +0900</pubDate>
+      <title>Kivy</title>
+      <link>https://hanuomk2.github.io/tags/kivy/</link>
+      <pubDate>Sat, 05 Aug 2023 16:54:40 +0900</pubDate>
       
-      <guid>https://hanuomk2.github.io/tags/githubpages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://hanuomk2.github.io/tags/hugo/</link>
-      <pubDate>Mon, 10 Jul 2023 22:42:04 +0900</pubDate>
-      
-      <guid>https://hanuomk2.github.io/tags/hugo/</guid>
+      <guid>https://hanuomk2.github.io/tags/kivy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>M1Pro</title>
       <link>https://hanuomk2.github.io/tags/m1pro/</link>
-      <pubDate>Sun, 09 Jul 2023 21:37:11 +0900</pubDate>
+      <pubDate>Sat, 05 Aug 2023 16:54:40 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/tags/m1pro/</guid>
       <description></description>
@@ -38,9 +29,36 @@
     <item>
       <title>MacbookPro</title>
       <link>https://hanuomk2.github.io/tags/macbookpro/</link>
-      <pubDate>Sun, 09 Jul 2023 21:37:11 +0900</pubDate>
+      <pubDate>Sat, 05 Aug 2023 16:54:40 +0900</pubDate>
       
       <guid>https://hanuomk2.github.io/tags/macbookpro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://hanuomk2.github.io/tags/python/</link>
+      <pubDate>Sat, 05 Aug 2023 16:54:40 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GithubPages</title>
+      <link>https://hanuomk2.github.io/tags/githubpages/</link>
+      <pubDate>Sun, 09 Jul 2023 21:37:11 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/githubpages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://hanuomk2.github.io/tags/hugo/</link>
+      <pubDate>Sun, 09 Jul 2023 21:37:11 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

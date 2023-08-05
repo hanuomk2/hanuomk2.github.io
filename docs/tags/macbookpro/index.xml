@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;Odaba 2022</copyright>
-    <lastBuildDate>Sun, 09 Jul 2023 21:37:11 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 16:54:40 +0900</lastBuildDate><atom:link href="https://hanuomk2.github.io/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacbookPro 2021(Apple M1Pro)でKivyのインストール</title>
+      <link>https://hanuomk2.github.io/posts/kivy-install-on-applem1pro/</link>
+      <pubDate>Sat, 05 Aug 2023 16:54:40 +0900</pubDate>
+      
+      <guid>https://hanuomk2.github.io/posts/kivy-install-on-applem1pro/</guid>
+      <description>Kivyを使ってAndroidアプリの作成を検討しているので、 それに沿って必要なパッケージをインストール 謝辞-参考サイト macOS Monterey (12.3)のM</description>
+    </item>
+    
     <item>
       <title>MacbookPro 2021(Apple M1Pro)でGithub Pagesへのポスト環境</title>
       <link>https://hanuomk2.github.io/posts/github-pages-with-hugo-on-applem1pro/</link>

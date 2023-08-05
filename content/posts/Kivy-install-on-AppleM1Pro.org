@@ -1,0 +1,131 @@
+#+TITLE: MacbookPro 2021(Apple M1Pro)でKivyのインストール
+#+DATE: 2023-08-05T16:54:40+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築
+#+TAGS[]: Kivy Python MacbookPro M1Pro
+
+Kivyを使ってAndroidアプリの作成を検討しているので、
+それに沿って必要なパッケージをインストール
+
+* 謝辞-参考サイト
+[[https://vucavucalife.com/kivy-app-wo-packaging-by-pyinstaller-on-macos-monterey-m1-macbook/][macOS Monterey (12.3)のM1 MacBookでPyInstallerを使って、Kivyで作
+ったアプリをappパッケージにするの巻]]\\
+[[https://kivy.org/doc/stable/guide/packaging-osx.html][Programming Guide » Creating packages for macOS]]\\
+[[https://hitori-sekai.com/python/mac-python-install/][【M1 Mac Apple silicon】Mac環境にPython3をインストールする方法]]\\
+[[https://creepfablic.site/2021/05/02/python-kivy-windows-mac-install/][pythonでkivyを使う~インストール編【Windows/Mac】]]
+
+* インストール環境
+・ macOS Ventura 13.5\\
+・ Homebrew 4.0.28
+
+* インストールしたパッケージ
+・ SDL2, SDL2_image, SLD2_ttf, SDL2_mixer\\
+・ pyenv 2.3.23\\
+・ python 3.11.4\\
+・ pipenv 2023.7.23\\
+・ Cython 0.29.33\\
+・ Kivy 2.2.1\\
+・ pyinstallier 5.13.0
+
+* SDL2, SDL2_image, SLD2_ttf, SDL2_mixerのインストール
+
+#+BEGIN_SRC sh
+$ brew reinstall --build-from-source sdl2 sdl2_image sdl2_ttf sdl2_mixer
+#+END_SRC
+
+* pyenvのインストール
+
+#+BEGIN_SRC sh
+$ brew install pyenv
+#+END_SRC
+
+* pyenvの設定
+
+#+BEGIN_SRC sh
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+$ echo 'export PATH="$PYENV_ROOT/shims:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+$ source ~/.zshrc
+#+END_SRC
+
+* python3のインストール
+
+以下のコマンドでインストールできるpythonのバージョンを確認
+#+BEGIN_SRC sh
+$ pyenv install --list
+#+END_SRC
+
+以下のコマンドでpython3をインストール
+#+BEGIN_SRC sh
+$ env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.11.4
+#+END_SRC
+
+以下のコマンドでglobal設定
+#+BEGIN_SRC sh
+$ pyenv global 3.11.4
+#+END_SRC
+
+以下のコマンドで各ツールをアップグレード
+#+BEGIN_SRC sh
+$ python -m pip install --upgrade pip setuptools virtualenv
+#+END_SRC
+
+* Pipenvのインストール
+
+以下のコマンドでPipenvをインストール
+#+BEGIN_SRC sh
+$ python -m pip install pipenv
+#+END_SRC
+
+* 仮想環境の構築後、入ってみる
+
+#+BEGIN_SRC sh
+$ mkdir kivy
+$ cd kivy
+$ pipenv --python 3.11.4
+$ pipenv shell
+#+END_SRC
+
+* Cythonのインストール
+
+#+BEGIN_SRC sh
+$ pipenv install Cython==0.29.33
+#+END_SRC
+
+* kivyのインストール
+
+#+BEGIN_SRC sh
+$ pipenv install kivy
+#+END_SRC
+
+* pyinstallerのインストール
+
+#+BEGIN_SRC sh
+$ pipenv install pyinstaller
+#+END_SRC
+
+* 参考サイトに従い、動作確認
+
+以下をmain.pyというファイル名で作成
+
+#+BEGIN_SRC python
+from kivy.app import App
+from kivy.uix.label import Label
+
+class HelloWorldApp(App):
+
+    def build(self):
+        return Label(text="Hello World")
+
+if __name__=='__main__':
+    HelloWorldApp().run()
+#+END_SRC
+
+以下のコマンドで実行
+#+BEGIN_SRC sh
+$ python main.py
+#+END_SRC
+
+以上
+
+

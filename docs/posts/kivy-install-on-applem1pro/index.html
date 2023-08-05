@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MacbookPro 2021(Apple M1Pro)でKivyのインストール &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Kivyを使ってAndroidアプリの作成を検討しているので、 それに沿って必要なパッケージをインストール 謝辞-参考サイト macOS Monterey (12.3)のM|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MacbookPro 2021(Apple M1Pro)でKivyのインストール</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89' class="muted-link">
+  <span class="Label Label--gray-darker">環境構築</span>
+</a>
+
+
+
+<a href='/tags/kivy' class="muted-link">
+  <span class="Label Label--gray">Kivy</span>
+</a>
+
+<a href='/tags/python' class="muted-link">
+  <span class="Label Label--gray">Python</span>
+</a>
+
+<a href='/tags/macbookpro' class="muted-link">
+  <span class="Label Label--gray">MacbookPro</span>
+</a>
+
+<a href='/tags/m1pro' class="muted-link">
+  <span class="Label Label--gray">M1Pro</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-08-05. Published at: 2023-08-05.">
+        
+          Published: 2023-08-05
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+Kivyを使ってAndroidアプリの作成を検討しているので、
+それに沿って必要なパッケージをインストール</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p><a href="https://vucavucalife.com/kivy-app-wo-packaging-by-pyinstaller-on-macos-monterey-m1-macbook/">macOS Monterey (12.3)のM1 MacBookでPyInstallerを使って、Kivyで作
+ったアプリをappパッケージにするの巻</a><br>
+<a href="https://kivy.org/doc/stable/guide/packaging-osx.html">Programming Guide » Creating packages for macOS</a><br>
+<a href="https://hitori-sekai.com/python/mac-python-install/">【M1 Mac Apple silicon】Mac環境にPython3をインストールする方法</a><br>
+<a href="https://creepfablic.site/2021/05/02/python-kivy-windows-mac-install/">pythonでkivyを使う~インストール編【Windows/Mac】</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+インストール環境
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>・ macOS Ventura 13.5<br>
+・ Homebrew 4.0.28</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+インストールしたパッケージ
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>・ SDL2, SDL2_image, SLD2_ttf, SDL2_mixer<br>
+・ pyenv 2.3.23<br>
+・ python 3.11.4<br>
+・ pipenv 2023.7.23<br>
+・ Cython 0.29.33<br>
+・ Kivy 2.2.1<br>
+・ pyinstallier 5.13.0</p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+SDL2, SDL2_image, SLD2_ttf, SDL2_mixerのインストール
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ brew reinstall --build-from-source sdl2 sdl2_image sdl2_ttf sdl2_mixer</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
+pyenvのインストール
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ brew install pyenv</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+pyenvの設定
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$PYENV_ROOT/shims:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(pyenv init -)&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">$ <span class="nb">source</span> ~/.zshrc</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+python3のインストール
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<p>
+以下のコマンドでインストールできるpythonのバージョンを確認</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pyenv install --list</span></span></code></pre></div>
+</div>
+<p>
+以下のコマンドでpython3をインストール</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ env <span class="nv">PYTHON_CONFIGURE_OPTS</span><span class="o">=</span><span class="s2">&#34;--enable-framework&#34;</span> pyenv install 3.11.4</span></span></code></pre></div>
+</div>
+<p>
+以下のコマンドでglobal設定</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pyenv global 3.11.4</span></span></code></pre></div>
+</div>
+<p>
+以下のコマンドで各ツールをアップグレード</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python -m pip install --upgrade pip setuptools virtualenv</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-2">
+<h2 id="headline-8">
+Pipenvのインストール
+</h2>
+<div id="outline-text-headline-8" class="outline-text-2">
+<p>
+以下のコマンドでPipenvをインストール</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python -m pip install pipenv</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+仮想環境の構築後、入ってみる
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ mkdir kivy
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> kivy
+</span></span><span class="line"><span class="cl">$ pipenv --python 3.11.4
+</span></span><span class="line"><span class="cl">$ pipenv shell</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
+Cythonのインストール
+</h2>
+<div id="outline-text-headline-10" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pipenv install <span class="nv">Cython</span><span class="o">==</span>0.29.33</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-2">
+<h2 id="headline-11">
+kivyのインストール
+</h2>
+<div id="outline-text-headline-11" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pipenv install kivy</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
+pyinstallerのインストール
+</h2>
+<div id="outline-text-headline-12" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pipenv install pyinstaller</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+参考サイトに従い、動作確認
+</h2>
+<div id="outline-text-headline-13" class="outline-text-2">
+<p>
+以下をmain.pyというファイル名で作成</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="kn">import</span> <span class="n">Label</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HelloWorldApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&#34;Hello World&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">HelloWorldApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+<p>
+以下のコマンドで実行</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python main.py</span></span></code></pre></div>
+</div>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MacbookPro 2021(Apple M1Pro)でKivyのインストール</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">インストール環境</a>
+</li>
+<li><a href="#headline-3">インストールしたパッケージ</a>
+</li>
+<li><a href="#headline-4">SDL2, SDL2_image, SLD2_ttf, SDL2_mixerのインストール</a>
+</li>
+<li><a href="#headline-5">pyenvのインストール</a>
+</li>
+<li><a href="#headline-6">pyenvの設定</a>
+</li>
+<li><a href="#headline-7">python3のインストール</a>
+</li>
+<li><a href="#headline-8">Pipenvのインストール</a>
+</li>
+<li><a href="#headline-9">仮想環境の構築後、入ってみる</a>
+</li>
+<li><a href="#headline-10">Cythonのインストール</a>
+</li>
+<li><a href="#headline-11">kivyのインストール</a>
+</li>
+<li><a href="#headline-12">pyinstallerのインストール</a>
+</li>
+<li><a href="#headline-13">参考サイトに従い、動作確認</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>
