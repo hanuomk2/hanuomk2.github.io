@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220213272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MackbookPro 2021(Apple M1Pro)でKivyMDのインストール &ndash; Odaba&#39;s Blog
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="前回の続きでKivyMDをインストール 謝辞-参考サイト kivyMDチュートリアルに入門する 仮想環境に入って、KivyMDのインストール $ pipenv shell|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Odaba&#39;s Blog">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/custom_style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://hanuomk2.github.io">
+    Odaba&#39;s Blog
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MackbookPro 2021(Apple M1Pro)でKivyMDのインストール</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89' class="muted-link">
+  <span class="Label Label--gray-darker">環境構築</span>
+</a>
+
+<a href='/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0' class="muted-link">
+  <span class="Label Label--gray-darker">プログラミング</span>
+</a>
+
+
+
+<a href='/tags/kivymd' class="muted-link">
+  <span class="Label Label--gray">KivyMD</span>
+</a>
+
+<a href='/tags/python' class="muted-link">
+  <span class="Label Label--gray">Python</span>
+</a>
+
+<a href='/tags/macbookpro' class="muted-link">
+  <span class="Label Label--gray">MacbookPro</span>
+</a>
+
+<a href='/tags/m1pro' class="muted-link">
+  <span class="Label Label--gray">M1Pro</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2023-08-12. Published at: 2023-08-12.">
+        
+          Published: 2023-08-12
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+<p>
+<a href="https://hanuomk2.github.io/posts/kivy-install-on-applem1pro/">前回</a>の続きで<a href="https://kivymd.readthedocs.io/en/latest/">KivyMD</a>をインストール</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+謝辞-参考サイト
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+<a href="https://qiita.com/virty">kivyMDチュートリアルに入門する</a></p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+仮想環境に入って、KivyMDのインストール
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ pipenv shell
+</span></span><span class="line"><span class="cl">$ pipenv install kivymd</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+<a href="https://kivymd.readthedocs.io/en/latest/getting-started/">getting-started</a>に従って、動作確認
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+以下をmain_kivymd.pyというファイル名で作成</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kivymd.app</span> <span class="kn">import</span> <span class="n">MDApp</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kivymd.uix.screen</span> <span class="kn">import</span> <span class="n">MDScreen</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kivymd.uix.button</span> <span class="kn">import</span> <span class="n">MDRectangleFlatButton</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MainApp</span><span class="p">(</span><span class="n">MDApp</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">theme_cls</span><span class="o">.</span><span class="n">theme_style</span> <span class="o">=</span> <span class="s2">&#34;Dark&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">theme_cls</span><span class="o">.</span><span class="n">primary_palette</span> <span class="o">=</span> <span class="s2">&#34;Orange&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">MDScreen</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">MDRectangleFlatButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Hello, World&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">pos_hint</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;center_x&#34;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&#34;center_y&#34;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">MainApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+<p>
+以下のコマンド実行</p>
+<div class="src src-sh">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ python main_kivymd.py</span></span></code></pre></div>
+</div>
+<p>
+以上</p>
+</div>
+</div>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MackbookPro 2021(Apple M1Pro)でKivyMDのインストール</b><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">謝辞-参考サイト</a>
+</li>
+<li><a href="#headline-2">仮想環境に入って、KivyMDのインストール</a>
+</li>
+<li><a href="#headline-3">getting-startedに従って、動作確認</a>
+</li>
+</ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Odaba 2022 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

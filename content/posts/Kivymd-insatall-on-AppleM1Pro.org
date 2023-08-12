@@ -1,0 +1,53 @@
+#+TITLE: MackbookPro 2021(Apple M1Pro)でKivyMDのインストール
+#+DATE: 2023-08-12T12:40:23+09:00
+#+DRAFT: false
+#+CATEGORIES[]: 環境構築 プログラミング
+#+TAGS[]: KivyMD Python MacbookPro M1Pro
+
+[[https://hanuomk2.github.io/posts/kivy-install-on-applem1pro/][前回]]の続きで[[https://kivymd.readthedocs.io/en/latest/][KivyMD]]をインストール
+
+* 謝辞-参考サイト
+
+[[https://qiita.com/virty][kivyMDチュートリアルに入門する]]
+
+* 仮想環境に入って、KivyMDのインストール
+
+#+BEGIN_SRC sh
+$ pipenv shell
+$ pipenv install kivymd
+#+END_SRC
+
+* [[https://kivymd.readthedocs.io/en/latest/getting-started/][getting-started]]に従って、動作確認
+
+以下をmain_kivymd.pyというファイル名で作成
+
+#+BEGIN_SRC python
+from kivymd.app import MDApp
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.button import MDRectangleFlatButton
+
+
+class MainApp(MDApp):
+    def build(self):
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Orange"
+
+        return (
+            MDScreen(
+                MDRectangleFlatButton(
+                    text="Hello, World",
+                    pos_hint={"center_x": 0.5, "center_y": 0.5},
+                )
+            )
+        )
+
+
+MainApp().run()
+#+END_SRC
+
+以下のコマンド実行
+#+BEGIN_SRC sh
+$ python main_kivymd.py
+#+END_SRC
+
+以上

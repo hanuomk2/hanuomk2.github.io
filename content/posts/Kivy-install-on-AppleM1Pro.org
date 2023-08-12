@@ -1,7 +1,7 @@
 #+TITLE: MacbookPro 2021(Apple M1Pro)でKivyのインストール
 #+DATE: 2023-08-05T16:54:40+09:00
 #+DRAFT: false
-#+CATEGORIES[]: 環境構築
+#+CATEGORIES[]: 環境構築 プログラミング
 #+TAGS[]: Kivy Python MacbookPro M1Pro
 
 Kivyを使ってAndroidアプリの作成を検討しているので、
